@@ -12,6 +12,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+header {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;  /* Asegúrate de que el header tenga una altura definida */
+}
+
 
 .App-header {
   background-color: #282c34;
