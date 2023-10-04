@@ -1,25 +1,43 @@
 // Ejemplo: src/components/Header.jsx
 // src/components/Header.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header className="bg-white h-screen flex flex-col justify-center items-center">
-            <img src="/favicon.ico" alt="Tu Logo" className="absolute top-10 left-10 w-20 h-20" />
-            <h1 className="text-5xl font-bold text-gray-800 mb-4">Tu Nombre</h1>
-            <p className="text-xl text-gray-700 mb-8">Desarrollador de Software especializado en Java y Animación 3D</p>
-            <div className="flex space-x-4">
-                <button className="px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                    Ver Proyectos
-                </button>
-                <button className="px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-                    Contacto
-                </button>
-            </div>
+        <header className="bg-black bg-opacity-90 h-auto flex flex-col justify-center items-center">
+
+            <nav className="flex justify-between items-center p-4">
+                <div className="flex space-x-4">
+                    <Link to="/" className="text-white hover:text-blue-400 transition duration-300">
+                        Me
+                    </Link>
+                    <Link to="/projects" className="text-white hover:text-blue-400 transition duration-300">
+                        Projects
+                    </Link>
+                    <Link to="/hire-me" className="text-white hover:text-blue-400 transition duration-300">
+                        Hire Me
+                    </Link>
+                </div>
+                <div className="flex space-x-4">
+                    <a href="path_to_GitHub" className="text-white hover:text-blue-400 transition duration-300">
+                        <i className="fab fa-github"></i>
+                    </a>
+                    <a href="path_to_Twitter" className="text-white hover:text-blue-400 transition duration-300">
+                        <i className="fab fa-twitter"></i>
+                    </a>
+                    {/* Add other social links similarly */}
+                </div>
+            </nav>
+
+            {/* ...Rest of the Header content... */}
+
         </header>
     );
 }
 
 export default Header;
+
+
 
 
