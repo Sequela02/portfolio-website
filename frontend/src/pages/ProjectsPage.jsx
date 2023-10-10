@@ -32,6 +32,44 @@ function ProjectsPage() {
             technologies: ["javafx", "mysql", "java"],
             githubURL: "https://github.com/Sequela02/FralarmInventory"
         }
+        ,
+        {
+            id: 3,
+            title: "Web Avenida Azul",
+            description: "sample.",
+            technologies: ["react", "mysql", "java","springboot"],
+            githubURL: "https://github.com/Sequela02/FralarmInventory"
+        },
+
+        {
+            id: 4,
+            title: "Minecraft mod",
+            description: "sample.",
+            technologies: ["java"],
+            githubURL: "https://github.com/Sequela02/FralarmInventory"
+        },{
+            id: 4,
+            title: "Minecraft mod",
+            description: "sample.",
+            technologies: ["java"],
+            githubURL: "https://github.com/Sequela02/FralarmInventory"
+        },{
+            id: 4,
+            title: "Minecraft mod",
+            description: "sample.",
+            technologies: ["java"],
+            githubURL: "https://github.com/Sequela02/FralarmInventory"
+        }
+
+
+
+
+
+
+
+
+
+
     ]);
 
     return (
@@ -42,16 +80,24 @@ function ProjectsPage() {
                 <Header className="header" />
 
                 {/* Main Content */}
-                <main className="flex flex-col md:flex-row justify-center items-start md:items-center h-auto md:h-screen">
+                <main className="flex flex-col md:flex-row justify-start items-start h-auto pt-24">
 
-                    <div className="main-content p-4 my-2 md:my-0 md:w-3/5 w-full rounded-xl text-gray-100 md:mr-4">
+                    <div className="project-main-content p-4 rounded-xl text-gray-100 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Projects Listing */}
+
+                        {/* Search bar and filters */}
+                        <div className="top-section">
+                            <input type="text" placeholder="Search" className="search-input"/>
+                            <button className="filter-button">Filters</button>
+                        </div>
 
                         {/* Projects Listing */}
-                        <div className="project-list flex flex-wrap">
+                        <div className="project-list">
                             {projects.map(project => (
                                 <div
                                     key={project.id}
-                                    className="max-w-sm rounded overflow-hidden shadow-lg p-4 m-4 transform transition-transform duration-200 hover:scale-105 bg-purple-800"
+                                    className="project-item"
+
                                     onClick={() => window.open(project.githubURL, "_blank")}
                                 >
                                     <h2 className="font-bold text-xl mb-2 text-white">{project.title}</h2>
@@ -66,8 +112,10 @@ function ProjectsPage() {
                         </div>
                     </div>
 
+
+
                     {/* Sidebar */}
-                    <Sidebar />
+                    <Sidebar className="sidebar" /> {/* Made sure it takes the full height */}
                 </main>
             </div>
         </div>

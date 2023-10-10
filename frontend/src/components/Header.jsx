@@ -42,29 +42,32 @@ function Header() {
     ];
 
     return (
-        <header className="header h-auto bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 p-4 rounded-lg">
-            <div className="container mx-auto px-4">
-                <nav className="flex justify-between items-center w-full">
+        <header className="header bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 p-1 rounded-lg">
+            <div className="containerHeader mx-auto px-4 flex items-center">
 
-                    {/* Render Navigation Links */}
-                    <div className="flex space-x-4">
-                        {navLinks.map(link => (
-                            <Link key={link.to} to={link.to} className="menu text-white hover:text-yellow-400 transition duration-300">
-                                {link.text}
-                            </Link>
-                        ))}
-                    </div>
+            <nav className="flex justify-between items-center w-full ">
 
-                    {/* Render Social Media Icons */}
-                    <div className="flex space-x-4">
-                        {socialLinks.map(social => (
-                            <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
-                                <img src={social.imgSrc} alt={social.alt} className="w-8 h-8 hover:opacity-75 transition duration-300" />
-                            </a>
-                        ))}
-                    </div>
 
-                </nav>
+                {/* Render Navigation Links */}
+                <div className="flex space-x-4">
+                    {navLinks.map(link => (
+                        <Link key={link.to} to={link.to} className="menu text-white transition-transform transform hover:scale-105 hover:border-b-2 hover:border-yellow-400 hover:text-yellow-400 transition duration-300">
+                            {link.text}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Render Social Media Icons */}
+                <div className="flex space-x-4">
+                    {socialLinks.map(social => (
+                        <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:rotate-12">
+                            <img src={social.imgSrc} alt={social.alt} className="w-8 h-8 hover:opacity-90 transition duration-300 align-middle" />
+                        </a>
+                    ))}
+                </div>
+
+
+            </nav>
             </div>
         </header>
     );
