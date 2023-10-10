@@ -1,37 +1,57 @@
+// Imports
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import '../assets/styles/styles.css';
 import Sidebar from "../components/Sidebar";
+import '../assets/styles/styles.css';
 
+/**
+ * ProjectsPage Component
+ * Displays a list of user projects with relevant details.
+ *
+ * Components Structure:
+ * - Background Container
+ *   - Main Container
+ *     - Header (Navigation Bar)
+ *     - Main Content (List of Projects)
+ *     - Sidebar (Additional Details)
+ */
 function ProjectsPage() {
-    // Sample state to manage the list of projects. Replace this with actual data.
-    const [projects, setProjects] = useState([
-        // Sample structure for projects
-        { id: 1, title: "Web Portfolio", description: "Portfolio web.", technologies: ["react", "java","spring boot",],githubURL: "https://github.com/Sequela02/portfolio-website" },
-        { id: 2, title: "Enterprise Management System", description: "sample.", technologies: ["javafx","mysql", "java"],githubURL: "https://github.com/Sequela02/FralarmInventory"}
-        // ... Add other projects
+    // Manage the list of projects using state
+    const [projects] = useState([
+        {
+            id: 1,
+            title: "Web Portfolio",
+            description: "Portfolio web.",
+            technologies: ["react", "java", "spring boot"],
+            githubURL: "https://github.com/Sequela02/portfolio-website"
+        },
+        {
+            id: 2,
+            title: "Enterprise Management System",
+            description: "sample.",
+            technologies: ["javafx", "mysql", "java"],
+            githubURL: "https://github.com/Sequela02/FralarmInventory"
+        }
     ]);
 
     return (
         <div className="background-gif">
             <div className="container mx-auto px-4">
+
+                {/* Header */}
                 <Header className="header" />
 
+                {/* Main Content */}
                 <main className="flex flex-col md:flex-row justify-center items-start md:items-center h-auto md:h-screen">
 
                     <div className="main-content p-4 my-2 md:my-0 md:w-3/5 w-full rounded-xl text-gray-100 md:mr-4">
-                        {/* Filters, Search, etc. can go here */}
-                        <div className="project-filters">
-                            {/* Example filters: */}
-                            {/* <button onClick={() => setFilter('Java')}>Java</button> */}
-                        </div>
 
-                        {/* Project Details Directly Here */}
+                        {/* Projects Listing */}
                         <div className="project-list flex flex-wrap">
                             {projects.map(project => (
                                 <div
                                     key={project.id}
-                                    className="max-w-sm rounded overflow-hidden shadow-lg p-4 m-4 transform transition-transform duration-200 hover:scale-105 bg-purple-800" // Changes here
+                                    className="max-w-sm rounded overflow-hidden shadow-lg p-4 m-4 transform transition-transform duration-200 hover:scale-105 bg-purple-800"
                                     onClick={() => window.open(project.githubURL, "_blank")}
                                 >
                                     <h2 className="font-bold text-xl mb-2 text-white">{project.title}</h2>
@@ -45,10 +65,9 @@ function ProjectsPage() {
                             ))}
                         </div>
                     </div>
+
+                    {/* Sidebar */}
                     <Sidebar />
-
-
-
                 </main>
             </div>
         </div>
