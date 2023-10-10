@@ -28,7 +28,7 @@ git clone <https://github.com/Sequela02/portfolio-website>
 
 🚀 Step into the project directory and gear up with the dependencies:
 
-cd frontend
+cd frontend 
 
 npm install
 🎉 Now, ignite the development server:
