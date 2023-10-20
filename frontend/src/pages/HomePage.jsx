@@ -24,14 +24,13 @@ function HomePage() {
                 <Header className="header" />
 
                 {/* Main Content Area */}
-                <main className="flex flex-col md:flex-row justify-start items-start h-auto pt-24">
+                <main className="flex flex-col md:flex-row justify-start items-start h-auto pt-10 md:pt-24">
 
 
 
 
                 {/* Profile Section */}
-                    <div className="main-content p-4 rounded-xl text-gray-100">  {/* Adjusted margin right here */}
-
+                    <div className="main-content mb-6  w-full md:w-4/5 lg:w-3/5 p-4 rounded-xl text-gray-100">
 
                         {/* Profile Picture and Name */}
                         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
@@ -56,7 +55,7 @@ function HomePage() {
                     </div>
 
                     {/* Sidebar Section */}
-                    <Sidebar className="sidebar" /> {/* Made sure it takes the full height */}
+                    <Sidebar className="sidebar " /> {/* Made sure it takes the full height */}
 
                 </main>
             </div>

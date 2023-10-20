@@ -20,10 +20,10 @@ function Sidebar() {
     ];
 
     return (
-        <div className="w-full">
+        <div className="w-auto">
 
             {/* About Me Section */}
-            <aside className="sidebar p-4 text-white md:ml-4 mb-4 bg-purple-700 rounded-xl mb-spacing">
+            <aside className="sidebar p-4 text-white md:ml-4 mb-6 bg-purple-700 rounded-xl ">
                 <h2 className="text-2xl font-bold mb-4">About me</h2>
                 <ul className="space-y-2">
                     {userInfo.map(info => (
@@ -39,7 +39,7 @@ function Sidebar() {
             </aside>
 
             {/* Be My Sponsor Section */}
-            <aside className="sidebar p-4 text-white md:ml-4 bg-purple-700 rounded-xl">
+            <aside className="sidebar mb-6 p-4 text-white md:ml-4 bg-purple-700 rounded-xl">
                 <h2 className="text-2xl font-bold mb-4">🎁 Be my sponsor</h2>
                 <p className="mb-4">If you like the work I do, you can make a donation to motivate me to continue contributing to the open source industry.</p>
                 <a href="https://www.patreon.com/YourUsername" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-purple-500 px-4 py-2 rounded text-white hover:bg-purple-600 transition-colors duration-200">Paypal</a>

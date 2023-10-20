@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // <-- Import NavLink at the top
 import '../assets/styles/styles.css';
-
+import { Link, useLocation } from 'react-router-dom';
 // Icons imports
 import gitIcon from '../assets/images/git_icon.png';
 import twitterIcon from '../assets/images/twitter_icon.png';
@@ -31,7 +31,7 @@ function Header() {
         { to: "/projects", text: "Projects" },
         { to: "/hire-me", text: "Hire Me" }
     ];
-
+    const location = useLocation();
     // Social links data
     const socialLinks = [
         { href: "https://github.com/sequela02", imgSrc: gitIcon, alt: "GitHub" },
@@ -44,33 +44,38 @@ function Header() {
     return (
         <header className="header bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 p-1 rounded-lg">
             <div className="containerHeader mx-auto px-4 flex items-center">
+                <nav className="flex flex-col md:flex-row justify-between items-center w-full">
+                    {/* Render Navigation Links */}
+                    <div className="flex flex-wrap justify-center space-x-4 mb-2 md:mb-0">
+                        {navLinks.map(link => {
+                            // Check if the link is active
+                            const isActive = location.pathname === link.to;
 
-            <nav className="flex justify-between items-center w-full ">
+                            return (
+                                <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    className={`menu ${isActive ? 'text-cyan-950' : 'text-white'} text-lg md:text-xl transform hover:border-b-2 hover:border-b-fantastic-blue hover:text-fantastic-blue transition duration-300`}
+                                >
+                                    {link.text}
+                                </Link>
 
-
-                {/* Render Navigation Links */}
-                <div className="flex space-x-4">
-                    {navLinks.map(link => (
-                        <Link key={link.to} to={link.to} className="menu text-white transition-transform transform hover:scale-105 hover:border-b-2 hover:border-yellow-400 hover:text-yellow-400 transition duration-300">
-                            {link.text}
-                        </Link>
-                    ))}
-                </div>
-
-                {/* Render Social Media Icons */}
-                <div className="flex space-x-4">
-                    {socialLinks.map(social => (
-                        <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:rotate-12">
-                            <img src={social.imgSrc} alt={social.alt} className="w-8 h-8 hover:opacity-90 transition duration-300 align-middle" />
-                        </a>
-                    ))}
-                </div>
-
-
-            </nav>
+                            );
+                        })}
+                    </div>
+                    {/* Render Social Media Icons */}
+                    <div className="flex justify-center space-x-4">
+                        {socialLinks.map(social => (
+                            <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:rotate-12">
+                                <img src={social.imgSrc} alt={social.alt} className="w-8 h-8 hover:opacity-90 transition duration-300 align-middle" />
+                            </a>
+                        ))}
+                    </div>
+                </nav>
             </div>
         </header>
     );
+
 }
 
 export default Header;

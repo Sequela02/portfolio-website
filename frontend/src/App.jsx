@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
+import HireMePage from './pages/HireMePage';
 
 /**
  * App Component
@@ -19,6 +20,8 @@ function App() {
 
                 {/* Projects Route */}
                 <Route path="/projects" element={<ProjectsPage />} />
+                {/* Projects Route */}
+                <Route path="/hire-me" element={<HireMePage />} />
             </Routes>
         </Router>
     );
