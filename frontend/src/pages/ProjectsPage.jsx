@@ -32,34 +32,7 @@ function ProjectsPage() {
             technologies: ["javafx", "mysql", "java"],
             githubURL: "https://github.com/Sequela02/FralarmInventory"
         }
-        ,
-        {
-            id: 3,
-            title: "Web Avenida Azul",
-            description: "sample.",
-            technologies: ["react", "mysql", "java","springboot"],
-            githubURL: "https://github.com/Sequela02/FralarmInventory"
-        },
 
-        {
-            id: 4,
-            title: "Minecraft mod",
-            description: "sample.",
-            technologies: ["java"],
-            githubURL: "https://github.com/Sequela02/FralarmInventory"
-        },{
-            id: 4,
-            title: "Minecraft mod",
-            description: "sample.",
-            technologies: ["java"],
-            githubURL: "https://github.com/Sequela02/FralarmInventory"
-        },{
-            id: 4,
-            title: "Minecraft mod",
-            description: "sample.",
-            technologies: ["java"],
-            githubURL: "https://github.com/Sequela02/FralarmInventory"
-        }
 
 
 
