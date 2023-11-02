@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // <-- Import NavLink at the top
+
 import '../assets/styles/styles.css';
 import { Link, useLocation } from 'react-router-dom';
 // Icons imports
