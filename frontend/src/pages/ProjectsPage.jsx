@@ -20,7 +20,7 @@ function ProjectsPage() {
     const [projects] = useState([
         {
             id: 1,
-            title: "Web Portfolio",
+            title: "My Web Portfolio",
             description: "Portfolio web.",
             technologies: ["react", "java", "spring boot","heroku"],
             githubURL: "https://github.com/Sequela02/portfolio-website"
