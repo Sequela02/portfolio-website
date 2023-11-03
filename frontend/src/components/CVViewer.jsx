@@ -1,31 +1,38 @@
-import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+import React from 'react';
+import { Viewer, Worker } from '@react-pdf-viewer/core';
 
-// Setting up the pdf worker (choose one of the setup methods described in previous messages)
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// Import the default layout plugin and its styles
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+// Import the drop plugin and its styles
+import { dropPlugin } from '@react-pdf-viewer/drop';
+import '@react-pdf-viewer/drop/lib/styles/index.css';
+
+// Import the core styles (if not already imported in your project)
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 function CVViewer({ file }) {
-    const [ setNumPages] = useState(null);
-    const [pageNumber] = useState(1);
-
-    const onDocumentLoadSuccess = ({ numPages }) => {
-        setNumPages(numPages);
-    };
+    // Create instances of the plugins
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const dropPluginInstance = dropPlugin();
 
     return (
-        <div>
-            <Document
-                file={file}
-                onLoadSuccess={onDocumentLoadSuccess}
-                onLoadError={(error) => console.error("PDF Load Error:", error.message)}
-            >
-                <Page
-                    pageNumber={pageNumber}
-                    onRenderError={(error) => console.error("PDF Render Error:", error.message)}
+        <div
+            style={{
+                display: 'flex',
+                height: '50rem',
+                margin: '5rem auto',
+                width: '64rem',
+            }}
+        >
+            {/* Use the Worker with the correct version */}
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+                <Viewer
+                    fileUrl={file}
+                    plugins={[defaultLayoutPluginInstance, dropPluginInstance]}
                 />
-            </Document>
-
+            </Worker>
         </div>
     );
 }
