@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import '../assets/styles/projectsPage.css';
 import thumbnail1 from '../assets/images/avenidaSS.png';
 import thumbnail2 from '../assets/images/portfoliopc.png';
 import thumbnail8 from '../assets/images/fralarmss.png';
-import Footer from "../components/Footer";
+
 /**
  * ProjectsPage component displays a list of projects with dynamic backgrounds
  * and detailed project information, including links to external sites.
