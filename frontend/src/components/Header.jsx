@@ -1,81 +1,74 @@
 import React from 'react';
-
-import '../assets/styles/styles.css';
 import { Link, useLocation } from 'react-router-dom';
-// Icons imports
-import gitIcon from '../assets/images/git_icon.png';
-import twitterIcon from '../assets/images/twitter_icon.png';
-import linkedinIcon from '../assets/images/linkedin_icon.png';
-import twitchIcon from '../assets/images/twitch_icon.png';
-import ytIcon from '../assets/images/youtube_icon.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faTwitter, faLinkedin, faTwitch, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
+
 
 /**
- * Header Component: Displays the main navigation links and social media icons.
+ * Renders navigation links.
  *
- * Contains links to:
- * - Me
- * - Projects
- * - Hire Me
- *
- * Contains icons with links to:
- * - GitHub
- * - Twitter
- * - LinkedIn
- * - Twitch
- * - YouTube
+ * @param {Object} props - The component props.
+ * @param {Array} props.navLinks - An array of navigation links.
+ * @param {string} props.currentPath - The current path.
+ */
+const NavigationLinks = ({ navLinks, currentPath }) => (
+    <div className="flex items-center justify-start space-x-4">
+        {navLinks.map(({ to, text }) => (
+            <Link
+                key={to}
+                to={to}
+                className={`px-3 py-2 text-lg hover:text-cyberPink ${currentPath === to ? 'text-cyberBlue font-semibold' : 'text-white'} transition duration-300 neon-text`}
+            >
+                {text}
+            </Link>
+        ))}
+    </div>
+);
+
+/**
+ * Renders social media links.
+ */
+const SocialLinks = () => (
+    <div className="flex items-center justify-center md:justify-end space-x-4">
+        <a href="https://github.com/sequela02" target="_blank" rel="noopener noreferrer" className="neon-text hover:scale-125 transition-transform duration-300">
+            <FontAwesomeIcon icon={faGithub} className="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+        <a href="https://twitter.com/sequela007" target="_blank" rel="noopener noreferrer" className="neon-text hover:scale-125 transition-transform duration-300">
+            <FontAwesomeIcon icon={faTwitter} className="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+        <a href="https://www.linkedin.com/in/ricardo-armenta-parra-b7066a201/" target="_blank" rel="noopener noreferrer" className="neon-text hover:scale-125 transition-transform duration-300">
+            <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+        <a href="https://www.twitch.tv/canitas02" target="_blank" rel="noopener noreferrer" className="neon-text hover:scale-125 transition-transform duration-300">
+            <FontAwesomeIcon icon={faTwitch} className="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCP6JKowpTbHkHYmXZs0RoOA" target="_blank" rel="noopener noreferrer" className="neon-text hover:scale-125 transition-transform duration-300">
+            <FontAwesomeIcon icon={faYoutube} className="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+    </div>
+);
+
+/**
+ * Header component.
  */
 function Header() {
-    // Navigation links data
     const navLinks = [
         { to: "/", text: "Me" },
         { to: "/projects", text: "Projects" },
         { to: "/hire-me", text: "Hire Me" }
     ];
+
     const location = useLocation();
-    // Social links data
-    const socialLinks = [
-        { href: "https://github.com/sequela02", imgSrc: gitIcon, alt: "GitHub" },
-        { href: "https://twitter.com/sequela007", imgSrc: twitterIcon, alt: "Twitter" },
-        { href: "https://www.linkedin.com/in/ricardo-armenta-parra-b7066a201/", imgSrc: linkedinIcon, alt: "LinkedIn" },
-        { href: "https://www.twitch.tv/canitas02", imgSrc: twitchIcon, alt: "Twitch" },
-        { href: "https://www.youtube.com/channel/UCP6JKowpTbHkHYmXZs0RoOA", imgSrc: ytIcon, alt: "YouTube" }
-    ];
 
     return (
-        <header className="header bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 p-1 rounded-lg">
-            <div className="containerHeader mx-auto px-4 flex items-center">
-                <nav className="flex flex-col md:flex-row justify-between items-center w-full">
-                    {/* Render Navigation Links */}
-                    <div className="flex flex-wrap justify-center space-x-4 mb-2 md:mb-0">
-                        {navLinks.map(link => {
-                            // Check if the link is active
-                            const isActive = location.pathname === link.to;
-
-                            return (
-                                <Link
-                                    key={link.to}
-                                    to={link.to}
-                                    className={`menu ${isActive ? 'text-cyan-950' : 'text-white'} text-lg md:text-xl transform hover:border-b-2 hover:border-b-fantastic-blue hover:text-fantastic-blue transition duration-300`}
-                                >
-                                    {link.text}
-                                </Link>
-
-                            );
-                        })}
-                    </div>
-                    {/* Render Social Media Icons */}
-                    <div className="flex justify-center space-x-4">
-                        {socialLinks.map(social => (
-                            <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="transform transition-transform hover:rotate-12">
-                                <img src={social.imgSrc} alt={social.alt} className="w-8 h-8 hover:opacity-90 transition duration-300 align-middle" />
-                            </a>
-                        ))}
-                    </div>
-                </nav>
+        <header className="bg-cyberDark p-4 rounded-lg shadow-md">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+                <NavigationLinks navLinks={navLinks} currentPath={location.pathname} />
+                <SocialLinks />
             </div>
         </header>
     );
-
 }
 
 export default Header;

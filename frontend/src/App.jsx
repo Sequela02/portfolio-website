@@ -1,29 +1,27 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header'; // Import your Header component
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import HireMePage from './pages/HireMePage';
-
-/**
- * App Component
- *
- * This component sets up the application's routing using react-router.
- * Currently, it supports two routes: the HomePage and the ProjectsPage.
- */
+import Footer from './components/Footer'; // Import your Footer component
 function App() {
     return (
         <Router>
-            <Routes>
-                {/* Home Route */}
-                <Route path="/" element={<HomePage />} />
-
-                {/* Projects Route */}
-                <Route path="/projects" element={<ProjectsPage />} />
-                {/* Projects Route */}
-                <Route path="/hire-me" element={<HireMePage />} />
-            </Routes>
+            <Header />
+            <div className="flex flex-col min-h-screen">
+                <main className="flex-grow">
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/projects" element={<ProjectsPage />} />
+                        <Route path="/hire-me" element={<HireMePage />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
         </Router>
+
     );
 }
 

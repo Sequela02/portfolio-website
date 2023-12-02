@@ -1,0 +1,75 @@
+/* Custom Cyberpunk Styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* This will push the footer to the bottom */
+}
+
+/* Background and Text Colors */
+.bg-dark {
+    background-color: #111; /* Dark background for the main area */
+}
+
+.text-neon-pink {
+    color: #ff00ff; /* Neon pink text color */
+}
+
+.text-neon-green {
+    color: #0f0; /* Neon green text color */
+}
+
+/* Project Container */
+.project-container {
+    background-color: rgba(33, 33, 33, 0.8); /* Dark background with some transparency */
+    border-radius: 0.5rem; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for background */
+    padding: 1.5rem; /* Padding around the container */
+    margin-bottom: 2rem; /* Spacing between project entries */
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+    border: 1px solid transparent; /* Transparent border for neon effect */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green neon glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.project-container:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); /* Enhanced green neon glow on hover */
+}
+
+
+
+
+/* Buttons */
+.button {
+    background-color: #ff00ff; /* Neon pink background */
+    color: white; /* White text */
+    padding: 0.5rem 1rem; /* Padding inside the button */
+    border-radius: 0.25rem; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.button:hover {
+    background-color: #0f0; /* Neon green background on hover */
+}
+
+/* Technology Tags */
+.tech-tag {
+    display: inline-block; /* Inline-block for wrapping */
+    background-color: #6a0dad; /* Deep purple background */
+    color: #32cd32; /* Lime green text for contrast and readability */
+    padding: 0.25rem 0.5rem; /* Padding inside the tag */
+    border-radius: 9999px; /* Fully rounded corners */
+    margin-right: 0.5rem; /* Spacing between tags */
+    margin-bottom: 0.5rem; /* Spacing below tags */
+    font-size: 0.875rem; /* Smaller font size */
+    font-weight: 600; /* Semi-bold text */
+}
+
+

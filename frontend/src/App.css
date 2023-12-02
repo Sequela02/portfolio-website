@@ -1,3 +1,6 @@
+/* Import Orbitron Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
 /* Tailwind CSS imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -6,26 +9,33 @@
 /* General App Styles */
 .App {
   text-align: center;
+  font-family: 'Orbitron', sans-serif; /* Apply Orbitron font */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  /* Add a neon glow effect if needed */
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0d0d0d; /* Cyberpunk Dark Background */
+  color: #ff007a; /* Neon Pink Text */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #00f0ff; /* Neon Blue */
+}
+
+/* Neon Glow Effect */
+.neon-text {
+  text-shadow: 0 0 .5rem #ff007a, 0 0 1rem #ff007a, 0 0 1.5rem #ff007a;
 }
 
 /* Animations */
@@ -43,4 +53,5 @@
     transform: rotate(360deg);
   }
 }
+
 

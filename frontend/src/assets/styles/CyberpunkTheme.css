@@ -1,0 +1,187 @@
+/* Base Styles */
+/* Applies basic font and background styles to the entire page */
+body, html {
+    font-family: 'Orbitron', sans-serif; /* Custom font for modern look */
+    background-color: #0a0a0a; /* Dark background for contrast */
+    color: #fff; /* Bright text for readability */
+}
+
+/* Cyberpunk Neon Glow Effect */
+/* This class adds a neon glow effect to text, typically used for headings or special text */
+.cyberpunk-neon {
+    color: #0f0; /* Bright green for neon effect */
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* Neon glow effect with two layers */
+}
+.cyberpunk-neon2 {
+    color: #2f00ff; /* Bright green for neon effect */
+    text-shadow: 0 0 5px #291eb2, 0 0 10px #0022ff; /* Neon glow effect with two layers */
+}
+
+/* Button Styles */
+/* Styles for buttons with a cyberpunk aesthetic */
+.cyber-button {
+    background-color: #222; /* Dark button background */
+    color: #0f0; /* Neon text */
+    border: 1px solid #0f0; /* Neon border */
+    padding: 10px 20px; /* Padding for button size */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allows setting padding and margin */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cyber-button:hover {
+    background-color: #9a0fbf; /* Purple color on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Section Styling */
+/* General styles for different sections of the page */
+.section {
+    padding: 2rem; /* Uniform padding for all sections */
+    margin: 1rem 0; /* Spacing between sections */
+}
+
+/* Hero Section */
+/* Specific styles for the hero section, typically the first visual part of the website */
+.hero-section {
+    background-color: #121212; /* Dark background for hero section */
+    color: #c0c0c0; /* Soft white for text */
+    position: relative; /* Needed for absolute positioning of elements within */
+}
+/* Skills Section */
+.skills-section {
+   ;
+    padding: 2rem 1rem; /* Responsive padding */
+}
+
+/* Container for aligning content */
+.max-w-6xl {
+    max-width: 90%; /* Responsive width */
+    margin: auto;
+}
+
+
+
+/* Icons Container */
+.skills-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Spacing between icons */
+    justify-items: center;
+}
+
+/* Icons within the Skills Section */
+.skill-icon-container {
+    width: 80px; /* Responsive width */
+    height: 80px; /* Maintain square ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon-container:hover {
+    transform: scale(1.1);
+}
+
+/* Styles for image icons in the skills section */
+.skill-icon {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 10px #0f0);
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+    .text-4xl {
+        font-size: 2.5rem; /* Larger font size for larger screens */
+    }
+
+    .skill-icon-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Typed Text Container */
+/* Container for animated typing effect text */
+.typed-text-container {
+    min-height: 40px; /* Ensure a minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contact Section */
+/* Styling for the contact section of the website */
+.contact-section {
+    background-color: #282828; /* Lighter dark background for contrast */
+    color: #c0c0c0;
+}
+/* About Me Section */
+.about-me-section {
+    background-color: #3a0404; /* Dark background for the section */
+    text-align: center; /* Center align the text */
+}
+
+.about-me-photo {
+    margin-top: 1rem; /* Spacing above the photo */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.about-me-photo:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.about-me-text p {
+    color: #c0c0c0; /* Soft white for text */
+    margin-bottom: 1rem; /* Spacing between paragraphs */
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .about-me-photo {
+        margin-top: 0;
+    }
+
+    .about-me-content {
+        text-align: left; /* Align text to the left on larger screens */
+    }
+
+    .about-me-photo img {
+        width: 200px; /* Adjust image size on larger screens */
+        height: 200px;
+    }
+}
+
+/* Responsive Image Styling */
+.about-me-photo img {
+    width: 150px; /* Default image size */
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    border: 2px solid #0f0; /* Neon border */
+    box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; /* Neon glow effect */
+}
+/* Footer Styles */
+.footer {
+    background-color: #000; /* Black background */
+    padding: 1.5rem 0; /* Top and bottom padding */
+    color: #A0AEC0; /* Light gray text color */
+    font-size: 0.9rem; /* Slightly smaller font size for footer text */
+    border-top: 1px solid #2D3748; /* A border at the top for visual separation */
+}
+
+.footer .max-w-6xl {
+    max-width: 72rem; /* 6xl max width */
+    margin: 0 auto; /* Center the content */
+    padding: 0 1rem; /* Padding on the sides */
+    text-align: center; /* Center the text */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .footer {
+        font-size: 1rem; /* Larger font size on larger screens */
+    }
+}
