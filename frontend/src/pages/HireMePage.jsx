@@ -33,12 +33,7 @@ function HireMePage() {
                 </section>
 
 
-                {/* Call to Action Section */}
-                <section data-aos="fade-up" className="my-10 px-4 text-center">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-3">Start a Project</h2>
-                    <p className="mb-6">Interested in working together? I’m just an email away.</p>
-                    <a href="#contact" className="btn btn-primary">Hire Me</a>
-                </section>
+
 
                 {/* Contact Form Section */}
                 <section id="contact" data-aos="flip-up" className="w-full max-w-md mx-auto mb-10 px-4">
