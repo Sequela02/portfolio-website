@@ -19,21 +19,10 @@ function HireMePage() {
 
                 {/* Hero Section */}
                 <section data-aos="fade-up" className="text-center max-w-2xl mx-auto mb-10 px-4">
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">Crafting Digital Experiences</h1>
-                    <p className="text-lg sm:text-xl mb-6">Front-end wizardry with a splash of manga enthusiasm.</p>
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">Let's create something together</h1>
+
                 </section>
 
-                {/* Skills Overview Section */}
-                <section data-aos="fade-right" className="mb-10 px-4">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-3">Professional Skills</h2>
-                    {/* ... Insert graphical skills representation here ... */}
-                </section>
-
-                {/* Testimonials Section */}
-                <section data-aos="zoom-in-up" className="mb-10 px-4">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-3">Testimonials</h2>
-                    {/* Reuse testimonials from the homepage if available */}
-                </section>
 
                 {/* CV Viewer Section */}
                 <section data-aos="fade-left" className="mb-10 px-4 sm:px-6 lg:px-8">
