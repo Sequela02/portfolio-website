@@ -76,7 +76,7 @@ function HomePage() {
 
         // Typed.js for dynamic text effect setup
         const typed = new Typed('.typed-text', {
-            strings: ['c:/Users/Canitas', 'c:/Users/Canitas/Portfolio'],
+            strings: ['c:/','c:/Users/','c:/Users/Canitas', 'c:/Users/Canitas/Portfolio'],
             typeSpeed: 50,
             backSpeed: 25,
             backDelay: 1500,
