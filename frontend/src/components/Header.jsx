@@ -54,8 +54,8 @@ const SocialLinks = () => (
  */
 function Header() {
     const navLinks = [
-        { to: "/", text: "Me" },
-        { to: "/projects", text: "Projects" },
+        { to: "/", text: "About" },
+        { to: "/portfolio", text: "Portfolio" },
         { to: "/hire-me", text: "Hire Me" }
     ];
 

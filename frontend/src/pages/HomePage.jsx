@@ -15,7 +15,13 @@ import cSharpLogo from '../assets/icons/icons8-c-sharp-logo.svg';
 import profilePic from '../assets/icons/profilepic.jpg';
 import { Helmet } from 'react-helmet';
 import Typed from 'typed.js';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/CyberpunkTheme.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faDownload, faGraduationCap, faCode, faEnvelope, faHandshake, faUser} from '@fortawesome/free-solid-svg-icons';
+
+
 /**
  * HomePage component serves as the landing page of the application, showcasing a digital rain canvas effect,
  * dynamic typing text, and a grid of skill icons representing various technologies.
@@ -47,7 +53,8 @@ function HomePage() {
 
             drops.forEach((y, i) => {
                 const text = characters[Math.floor(Math.random() * characters.length)];
-                ctx.fillStyle = (i % 3 === 0) ? '#0f0' : (i % 3 === 1) ? '#ec0000' : '#ffffff';
+                ctx.fillStyle = (i % 3 === 0) ? '#0f0' : (i % 3 === 1) ? '#ffffff' : '#ec0000';
+
                 ctx.fillText(text, i * fontSize, y * fontSize);
                 drops[i] = (y * fontSize > canvas.height && Math.random() > 0.975) ? 0 : y + 1;
             });
@@ -84,9 +91,11 @@ function HomePage() {
             </Helmet>
             <main className="min-h-screen bg-black text-white">
                 <HeroSection canvasRef={canvasRef} />
-
-                <SkillsSection />
                 <AboutMe />
+                <SkillsSection />
+                <TrajectorySection />
+
+
                 <ContactSection />
 
             </main>
@@ -97,30 +106,96 @@ function HomePage() {
 
 // Hero section with canvas and dynamic text
 const HeroSection = ({ canvasRef }) => (
-    <section className="hero-section text-center p-4 md:p-20 relative">
+    <section className="hero-section text-center py-10 md:py-20 lg:py-32 relative">
         <canvas
             ref={canvasRef}
             className="absolute top-0 left-0 w-full h-full z-0"
         ></canvas>
         <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 cyberpunk-neon">Welcome to my Portfolio</h1>
-            <p className="text-3xl md:text-4xl mb-6 cyberpunk-neon">
-                Canitas
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 cyberpunk-neon">
+                Welcome to My Portfolio
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl mb-6 cyberpunk-neon2">
+                I'm 'Canitas', a Passionate Developer
             </p>
-            <div className="typed-text-container text-lg md:text-xl mb-6">
-                <p className="typed-text"></p>
+            <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 cyberpunk-neon">
+                <p className="typed-text">
+
+                </p>
             </div>
-            <Link to="/projects" className="cyber-button py-2 px-4 rounded">
-                Discover My Projects
+            <Link to="/portfolio" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cyber-button">
+                Explore My Projects
             </Link>
         </div>
     </section>
 );
+const timelineData = [
+    {
+        date: '2019-Today',
+        title: 'Bachelor of Computer Systems Engineering',
+        description: 'I started my degree in Computer Systems Engineering at the Instituto Tecnológico de Hermosillo, where I developed my programming skills, learned Object-Oriented Programming (OOP), Java, data structures, C# and SQLServer',
+
+    },
+
+];
+
+const TrajectorySection = () => (
+    <section className="py-12 md:py-16 lg:py-20 gradient-skills-bg">
+        <div className="container mx-auto px-4">
+            <h2 className="text-center text-green-400 cyberpunk-neon text-4xl" data-aos="fade">
+                <FontAwesomeIcon icon={faGraduationCap} className="mr-4" /> My Education
+            </h2>
+            <div className="w-full flex justify-center">
+                <VerticalTimeline layout="2-columns" lineColor="#00f260">
+                    {timelineData.map((event, index) => (
+                        <VerticalTimelineElement
+                            key={index}
+                            date={event.date}
+                            animate={true}
+                            dateClassName="custom-date-text"
+                            contentArrowStyle={{ borderRight: '7px solid #00f260' }}
+                            contentStyle={{ background: '#0a192f', color: '#ffffff', border: '1px solid #00f260' }}
+                            iconStyle={{ background: 'rgb(10, 25, 47)', color: '#00f260' }}
+                            data-aos="fade-left"
+                        >
+                            <div className="content-inner">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-green-300">{event.title}</h3>
+                                <p className="text-sm sm:text-base md:text-lg text-green-200">{event.description}</p>
+                            </div>
+                        </VerticalTimelineElement>
+                    ))}
+                </VerticalTimeline>
+            </div>
+            <div className="text-center mt-8">
+                <a
+                    href="/cv.pdf"
+                    className="cyber-button inline-block text-green-400 bg-gray-900 hover:bg-gray-700 font-bold py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded shadow-lg hover:shadow-xl transition duration-150 text-sm md:text-base lg:text-lg w-full sm:w-auto"
+                    download
+                >
+                    Download CV <FontAwesomeIcon icon={faDownload} />
+                </a>
+            </div>
+
+        </div>
+    </section>
+);
+
+
+
+
+
+
+
+
+
+
 
 const AboutMe = () => (
-    <section className="about-me-section bg-gradient-to-b from-black to-green-900 py-12 px-4">
+    <section className="about-me-section  py-12 px-4">
         <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-8 cyberpunk-neon">About Me</h2>
+            <h2 className="text-4xl font-bold mb-8 cyberpunk-neon">
+                <FontAwesomeIcon icon={faUser} /> About Me
+            </h2>
             <div className="about-me-content flex flex-col md:flex-row items-center justify-between">
                 <div className="about-me-text max-w-md mx-auto md:mx-0 md:max-w-lg">
                     <p>Hello! I'm Canitas, a 21-year-old avid gamer and cinephile with a zest for Chinese cuisine and a passion for boxing. I have a deep love for Java and backend development, and I'm currently immersed in my studies to further hone these skills.</p>
@@ -134,7 +209,6 @@ const AboutMe = () => (
         </div>
     </section>
 );
-
 
 const skills = [
     { src: cSharpLogo, alt: 'C#' },
@@ -151,12 +225,15 @@ const skills = [
 
 // Skills section showcasing various technology logos
 const SkillsSection = () => (
-    <section className="skills-section bg-gray-900 py-12 px-4">
+    <section className="skills-section gradient-bg py-16 px-6">
+
         <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center cyberpunk-neon mb-8">Technical Arsenal</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
+                <FontAwesomeIcon icon={faCode} className="mr-4" /> Technical Arsenal
+            </h2>
             <div className="skills-icons">
                 {skills.map((skill, index) => (
-                    <div key={index} className="skill-icon-container">
+                    <div key={index} className="skill-icon-container hover:scale-110  rounded-lg">
                         <img src={skill.src} alt={skill.alt} className="skill-icon" />
                     </div>
                 ))}
@@ -165,22 +242,24 @@ const SkillsSection = () => (
     </section>
 );
 
+
 // Contact section for user engagement
 const ContactSection = () => (
-    <section className="contact-section bg-gradient-to-b from-green-900 to-black py-10 px-4">
+    <section className="contact-section gradient-contact-bg  py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold cyberpunk-neon mb-8">Get in Touch</h2>
+            <h2 className="text-4xl font-bold cyberpunk-neon mb-8">
+                <FontAwesomeIcon icon={faEnvelope} /> Get in Touch
+            </h2>
             <p className="mb-6">
                 If you are interested in professional collaboration or have any inquiries, please feel free to reach out. I am available for discussions and potential opportunities.
             </p>
             <Link to="/hire-me" className="cyber-button text-white font-bold py-2 px-4 rounded">
-                Contact Me
+                <FontAwesomeIcon icon={faHandshake} /> Contact Me
             </Link>
         </div>
     </section>
+
 );
-
-
 
 
 export default HomePage;
