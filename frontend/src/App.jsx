@@ -18,8 +18,9 @@ function App() {
                         <Route path="/hire-me" element={<HireMePage />} />
                     </Routes>
                 </main>
-                <Footer />
+
             </div>
+            <Footer />
         </Router>
 
     );

@@ -1,9 +1,15 @@
 /* Base Styles */
 /* Applies basic font and background styles to the entire page */
+/* Global Styles */
 body, html {
-    font-family: 'Orbitron', sans-serif; /* Custom font for modern look */
     background-color: #0a0a0a; /* Dark background for contrast */
     color: #fff; /* Bright text for readability */
+    font-family: 'Lato', sans-serif; /* Default font for body text */
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Custom font for modern look in titles */
 }
 
 /* Cyberpunk Neon Glow Effect */
@@ -17,35 +23,23 @@ body, html {
     color: #7C7CFF; /* Lighter shade of blue for better readability */
     text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
 }
-/* Custom CSS for the date */
-/* Custom CSS for the date */
-/* Custom CSS for the date */
-/* Default styles for small screens */
+.cyberpunk-neon-text {
+    color: #7C7CFF; /* Lighter shade of blue for better readability */
+    text-shadow: 0 0 4px #5555FF, 0 0 6px #3030FF; /* Slightly toned down neon glow for paragraph readability */
+
+    text-align: justify;
+
+}
+
 /* Custom class for the date text */
-.custom-date-text {
 
-    color: #00f260; /* Neon color for the cyberpunk theme */
-    text-shadow: 0 0 5px #183a24, 0 0 10px #183a24; /* Glowing text shadow for the cyberpunk theme */
-    border-radius: 5px; /* Optional: add rounded corners to the date background */
-    padding: 0.25rem 0.5rem; /* Padding around the date text */
-    display: block; /* Ensure the date is always displayed */
-
-}
-
-/* You might also want to style the content arrow to match */
-.custom-content-arrow-style {
-    border-right: 7px solid #00f260; /* Example for a right-pointing arrow */
+.custom-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-
-/* Styles for larger screens */
-@media (min-width: 768px) { /* Adjust breakpoint as needed */
-    .date-text {
-        color: #007bff; /* Blue for larger screens */
-        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff; /* Blue shadow for larger screens */
-    }
-}
 
 
 
@@ -71,15 +65,8 @@ body, html {
 }
 
 
-/* Section Styling */
-/* General styles for different sections of the page */
-.section {
-    padding: 2rem; /* Uniform padding for all sections */
-    margin: 1rem 0; /* Spacing between sections */
-}
 
-/* Hero Section */
-/* Specific styles for the hero section, typically the first visual part of the website */
+
 .hero-section {
 
     position: relative; /* Needed for absolute positioning of elements within */
@@ -90,21 +77,8 @@ body, html {
     padding: 2rem 1rem; /* Responsive padding */
 }
 
-/* Container for aligning content */
-.max-w-6xl {
-    max-width: 90%; /* Responsive width */
-    margin: auto;
-}
 
 
-.date {
-    color: #00f260;
-    text-shadow: 0 0 5px #00f260, 0 0 10px #00f260;
-}
-
-.icon {
-    box-shadow: 0 0 5px #00f260, 0 0 10px #00f260;
-}
 /* Updated skills-section styles */
 .skills-section {
     padding: 3rem 1.5rem; /* Increased padding for better spacing */
@@ -130,11 +104,7 @@ body, html {
     border-radius: 8px; /* Rounded corners for a smoother look */
 }
 
-/* Enhanced hover effect for skill-icon-container */
-.skill-icon-container:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 8px #436b3a) drop-shadow(0 0 15px #39FF14); /* Enhanced neon glow */
-}
+
 
 /* Updated skill-icon styles */
 .skill-icon {
@@ -164,107 +134,28 @@ body, html {
     justify-content: center;
 }
 
-/* Contact Section */
-/* Styling for the contact section of the website */
-.contact-section {
-
-    color: #c0c0c0;
-}
-/* About Me Section */
-.about-me-section {
-    background-color: #0b1d2c;
-    text-align: center;
-    color: #f0f0f0; /* Light text color for contrast */
-}
-
-.section-title {
-    font-size: 3rem; /* Larger title size */
-    font-weight: 700; /* Bold title */
-    color: #ff6347; /* Vibrant title color */
-    margin-bottom: 2rem;
-}
-
-.about-me-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-.about-me-text {
-    max-width: 500px;
-    margin-bottom: 2rem;
-}
-
-.about-me-photo {
-    margin-top: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.about-me-photo:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-@media (min-width: 768px) {
-    .about-me-content {
-        flex-direction: row;
-    }
-
-    .about-me-photo {
-        margin-top: 0;
-    }
-}
 
 /* CSS */
 .gradient-bg {
-    background: linear-gradient(to bottom, #0b1d2c, black);
+    background: linear-gradient(to bottom, #0b1d2c, #06141c);
+}
+.gradient-about-me-bg {
+    background: linear-gradient(to bottom, #091c2a, #06141c);
 }
 .gradient-skills-bg {
-    background: linear-gradient(to bottom, black, #091c2a);
+    background: linear-gradient(to bottom, #06141c, #091c2a);
+}
+.tech-bg {
+    background: #06141c;
 }
 .gradient-contact-bg {
     background: linear-gradient(to bottom, #091c2a, black);
 }
-
-.about-me-photo {
-    margin-top: 1rem; /* Spacing above the photo */
-    transition: transform 0.3s ease; /* Transition for hover effect */
+.gradient-bg2 {
+    background: linear-gradient(to bottom, #091c2a, #091c2a);
 }
 
-.about-me-photo:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
 
-.about-me-text p {
-    color: #c0c0c0; /* Soft white for text */
-    margin-bottom: 1rem; /* Spacing between paragraphs */
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
-    .about-me-photo {
-        margin-top: 0;
-    }
-
-    .about-me-content {
-        text-align: left; /* Align text to the left on larger screens */
-    }
-
-    .about-me-photo img {
-        width: 200px; /* Adjust image size on larger screens */
-        height: 200px;
-    }
-}
-
-/* Responsive Image Styling */
-.about-me-photo img {
-    width: 150px; /* Default image size */
-    height: 150px;
-    border-radius: 50%; /* Circular image */
-    border: 2px solid #0f0; /* Neon border */
-    box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; /* Neon glow effect */
-}
 /* Footer Styles */
 .footer {
     background-color: #000; /* Black background */
@@ -287,3 +178,69 @@ body, html {
         font-size: 1rem; /* Larger font size on larger screens */
     }
 }
+/* Services section styling with purple theme */
+.services-section {
+    padding: 3rem 1.5rem;
+    background-color: #111; /* Dark background */
+}
+
+.services-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.service-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 100%; /* Single column on smaller screens */
+    max-width: 300px; /* Max width for consistency */
+    box-shadow: 0 0 15px rgba(124, 124, 255, 0.5); /* Subtle purple glow shadow */
+    cursor: pointer; /* Indicates the element is interactive */
+}
+
+.service-icon {
+    color: #7C7CFF; /* Lighter shade of purple */
+    filter: drop-shadow(0 0 8px #5555FF) drop-shadow(0 0 15px #3030FF); /* Purple neon glow */
+    margin-bottom: 15px;
+}
+
+.service-title {
+    color: #7C7CFF; /* Lighter shade of purple for better readability */
+    text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
+}
+
+.service-container:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    background-color: rgba(0, 0, 0, 0.7); /* Darken background on hover */
+    box-shadow: 0 0 20px rgba(124, 124, 255, 0.7); /* Intensify purple shadow on hover */
+}
+
+@media (min-width: 768px) {
+    .service-container {
+        flex-basis: calc(33.333% - 20px); /* 3 items per row on larger screens */
+    }
+}
+.service-description {
+    max-width: 800px; /* Restricting max width for better readability */
+    margin: 0 auto; /* Centering the text block */
+    line-height: 1.5; /* Improving line spacing */
+}
+
+.service-description p {
+    margin-bottom: 1rem; /* Spacing between paragraphs */
+    text-align: justify; /* Justify alignment for cleaner look */
+    text-justify: inter-word; /* Improved justification */
+}
+
+@media (max-width: 768px) {
+    .service-description {
+        max-width: 90%; /* Slightly narrower on smaller screens */
+    }
+}
+
+/* ... existing cyberpunk-neon2 class styles ... */

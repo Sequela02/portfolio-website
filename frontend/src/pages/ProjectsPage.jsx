@@ -71,16 +71,17 @@ function ProjectsPage() {
 
     return (
         <main className="min-h-screen bg-dark flex flex-col justify-between">
-            <section className="text-center py-20 px-4 lg:px-8 xl:px-16 bg-gray-900">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 font-bold text-neon-pink">Welcome to My World</h1>
-                <p className="text-xl lg:text-2xl mb-8 text-neon-green">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
+            <section className="text-center py-10 px-4 md:py-20 lg:px-8 xl:px-16 bg-gray-900">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold text-neon-pink">Welcome to My World</h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-8 text-neon-green">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
                 {/* Additional content can be placed here if needed */}
             </section>
 
-            <div className="container mx-auto px-4 md:px-8 lg:px-12">
+            <div className="flex flex-wrap mx-auto px-4 md:px-8 lg:px-14 my-10">
                 {projects.map((project, index) => (
-                    <div key={project.id} className="project-container flex flex-col lg:flex-row lg:items-center mb-6 lg:mb-12 xl:mb-16">
-                        <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:mr-8">
+                    <div className="project-container flex flex-col lg:flex-row lg:items-center mb-6 lg:mb-12 xl:mb-16 overflow-hidden">
+
+                    <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:mr-8">
                             <img
                                 src={project.thumbnail}
                                 alt={`${project.title} Thumbnail`}
@@ -89,11 +90,11 @@ function ProjectsPage() {
                             />
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <h2 className="text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold text-neon-pink">{project.title}</h2>
-                            <p className="text-base lg:text-lg xl:text-xl text-neon-green">{project.description}</p>
+                            <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold text-neon-pink">{project.title}</h2>
+                            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-neon-green">{project.description}</p>
                             <div className="tech-tags mb-6 flex flex-wrap">
                                 {project.technologies.map(tech => (
-                                    <span key={tech} className="tech-tag mr-2 mb-2 px-2 py-1">{tech}</span>
+                                    <span key={tech} className="tech-tag text-sm md:text-base mr-2 mb-2 px-2 py-1">{tech}</span>
                                 ))}
                             </div>
                             <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
@@ -104,10 +105,7 @@ function ProjectsPage() {
                     </div>
                 ))}
             </div>
-
         </main>
-
-
     );
 }
 

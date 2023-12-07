@@ -18,8 +18,18 @@ import Typed from 'typed.js';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/CyberpunkTheme.css';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faDownload, faGraduationCap, faCode, faEnvelope, faHandshake, faUser} from '@fortawesome/free-solid-svg-icons';
+import {
+    faDownload,
+    faGraduationCap,
+    faCode,
+    faEnvelope,
+    faHandshake,
+    faUser,
+    faLaptopCode, faMobileAlt, faCogs
+} from '@fortawesome/free-solid-svg-icons';
 
 
 /**
@@ -66,7 +76,7 @@ function HomePage() {
 
         // Typed.js for dynamic text effect setup
         const typed = new Typed('.typed-text', {
-            strings: ['Navigating through the digital realm...', 'Creating worlds within worlds...', 'Engineering the future, byte by byte...'],
+            strings: ['c:/Users/Canitas', 'c:/Users/Canitas/Portfolio'],
             typeSpeed: 50,
             backSpeed: 25,
             backDelay: 1500,
@@ -94,6 +104,7 @@ function HomePage() {
                 <AboutMe />
                 <SkillsSection />
                 <TrajectorySection />
+                <ServicesSection />
 
 
                 <ContactSection />
@@ -113,15 +124,15 @@ const HeroSection = ({ canvasRef }) => (
         ></canvas>
         <div className="relative z-10">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 cyberpunk-neon">
-                Welcome to My Portfolio
+                Canitas
             </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-6 cyberpunk-neon2">
-                I'm 'Canitas', a Passionate Developer
-            </p>
+            <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 cyberpunk-neon2">
+                Software Developer
+            </h2>
             <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 cyberpunk-neon">
-                <p className="typed-text">
+                <h3 className="typed-text">
 
-                </p>
+                </h3>
             </div>
             <Link to="/portfolio" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cyber-button">
                 Explore My Projects
@@ -181,9 +192,45 @@ const TrajectorySection = () => (
 );
 
 
+const services = [
+    { id: 1, title: 'Web Development', description: 'Building responsive and modern web applications.', icon: faLaptopCode },
+    { id: 2, title: 'Web Apps', description: 'Creating interactive and dynamic web applications tailored to your needs.', icon: faMobileAlt },
+    { id: 3, title: 'Software Development', description: 'Developing robust software solutions for various platforms.', icon: faCogs }
+];
+const ServicesSection = () => (
+    <section className="services-section gradient-bg2 py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
+                Our Services
+            </h1>
+            <div className="service-description text-center mb-12">
+                <p className="text-xl md:text-2xl font-bold  mb-4 cyberpunk-neon-text">
+                    I offer a range of technology services to help bring your digital projects to life.
+                </p>
+                <p className="text-xl md:text-xl cyberpunk-neon-text mb-4">
+                    For each project, I focus on understanding your goals and working closely with you. Effective communication is key, so I welcome your ideas and feedback throughout the development process.
+                </p>
+                <p className="text-xl md:text-xl cyberpunk-neon-text">
+                    My priority is creating solutions that achieve your objectives. I guide each project with your preferences and satisfaction in mind. Working as a team, we can leverage innovation to create something remarkable that brings your vision to reality.
+                </p>
+            </div>
 
-
-
+            <div className="services-flex flex flex-wrap justify-center">
+                {services.map((service) => (
+                    <div key={service.id} className="service-container transition-transform duration-300 ease-in-out rounded-lg text-center p-4 m-2">
+                        <FontAwesomeIcon icon={service.icon} className="service-icon cyberpunk-neon mb-4 text-4xl" />
+                        <h3 className="service-title text-lg md:text-xl font-semibold mb-2 cyberpunk-neon">
+                            {service.title}
+                        </h3>
+                        <p className="service-description">
+                            {service.description}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+);
 
 
 
@@ -191,24 +238,33 @@ const TrajectorySection = () => (
 
 
 const AboutMe = () => (
-    <section className="about-me-section  py-12 px-4">
-        <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-8 cyberpunk-neon">
+    <section className="py-12 gradient-about-me-bg px-4">
+        <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
                 <FontAwesomeIcon icon={faUser} /> About Me
             </h2>
-            <div className="about-me-content flex flex-col md:flex-row items-center justify-between">
-                <div className="about-me-text max-w-md mx-auto md:mx-0 md:max-w-lg">
-                    <p>Hello! I'm Canitas, a 21-year-old avid gamer and cinephile with a zest for Chinese cuisine and a passion for boxing. I have a deep love for Java and backend development, and I'm currently immersed in my studies to further hone these skills.</p>
-                    <p>In my leisure time, you'll often find me exploring the latest video games or delving into the world of cinema. My appetite for learning is as insatiable as my love for gaming and film, and I'm always on the lookout for new challenges that push my abilities to the limit.</p>
-                    <p>If you're interested in a collaborative project or just want to chat about the latest in gaming or film, feel free to reach out!</p>
+            <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="service-description text-center mb-12">
+                    <p className="text-xl md:text-2xl  mb-4 cyberpunk-neon-text">
+                        Hello there! I'm Ricardo Armenta, a 21-year-old avid gamer and cinephile with a zest for Chinese cuisine and a passion for boxing. I have a deep love for Java and backend development, and I'm currently immersed in my studies to further hone these skills.
+                    </p>
+                    <p className="text-xl md:text-xl cyberpunk-neon-text mb-4">
+                        In my leisure time, you'll often find me exploring the latest video games or delving into the world of cinema. My appetite for learning is as insatiable as my love for gaming and film, and I'm always on the lookout for new challenges that push my abilities to the limit.
+                    </p>
+                    <p className="text-xl md:text-xl cyberpunk-neon-text">
+                        If you're interested in a collaborative project or just want to chat about the latest in gaming or film, feel free to reach out!
+                   </p>
                 </div>
-                <div className="about-me-photo mt-8 md:mt-0">
-                    <img src={profilePic} alt="Canitas" />
+
+                <div className="flex justify-center items-center w-full md:w-full lg:w-1/3 xl:w-1/4 mx-auto mt-6">
+                    <img src={profilePic} alt="Ricardo Armenta" className="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
                 </div>
             </div>
         </div>
     </section>
 );
+
+
 
 const skills = [
     { src: cSharpLogo, alt: 'C#' },
@@ -225,22 +281,29 @@ const skills = [
 
 // Skills section showcasing various technology logos
 const SkillsSection = () => (
-    <section className="skills-section gradient-bg py-16 px-6">
-
+    <section className="skills-section tech-bg py-16 px-6">
         <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
                 <FontAwesomeIcon icon={faCode} className="mr-4" /> Technical Arsenal
             </h2>
-            <div className="skills-icons">
+            <div className="skills-icons grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
                 {skills.map((skill, index) => (
-                    <div key={index} className="skill-icon-container hover:scale-110  rounded-lg">
-                        <img src={skill.src} alt={skill.alt} className="skill-icon" />
+                    <div key={skill.id} className="skill-container  transition-transform duration-300 ease-in-out rounded-lg text-center">
+                        <div className="skill-icon-container mb-2">
+                            <img src={skill.src} alt={skill.alt} className="skill-icon mx-auto" />
+                        </div>
+                        <h1 className="skill-text text-sm md:text-base"> {/* Responsive text size */}
+                            {skill.alt}
+                        </h1>
                     </div>
                 ))}
             </div>
         </div>
     </section>
 );
+
+
+
 
 
 // Contact section for user engagement
