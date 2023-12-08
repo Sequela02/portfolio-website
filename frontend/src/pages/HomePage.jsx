@@ -201,7 +201,7 @@ const ServicesSection = () => (
     <section className="services-section gradient-bg2 py-16 px-6">
         <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
-                Our Services
+                 Services
             </h1>
             <div className="service-description text-center mb-12">
                 <p className="text-xl md:text-2xl font-bold  mb-4 cyberpunk-neon-text">
