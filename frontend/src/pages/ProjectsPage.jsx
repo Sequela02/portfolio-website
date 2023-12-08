@@ -1,8 +1,22 @@
-import React, { useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import '../assets/styles/projectsPage.css';
 import thumbnail1 from '../assets/images/avenidaSS.png';
 import thumbnail2 from '../assets/images/portfoliopc.png';
 import thumbnail8 from '../assets/images/fralarmss.png';
+const FilterDropdown = ({ technologies, selectedTech, onSelect }) => {
+    return (
+        <select
+            className="w-full p-4 rounded-md"
+            value={selectedTech}
+            onChange={(e) => onSelect(e.target.value)}
+        >
+            <option value="All">All Technologies</option>
+            {technologies.map((tech, index) => (
+                <option key={index} value={tech}>{tech}</option>
+            ))}
+        </select>
+    );
+};
 
 /**
  * ProjectsPage component displays a list of projects with dynamic backgrounds
@@ -45,7 +59,54 @@ function ProjectsPage() {
         // ... add more projects as needed
     ]);
 
-    // ...
+    // State to hold the current search term
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // State to store the filtered list of projects
+    const [filteredProjects, setFilteredProjects] = useState(projects);
+
+    // Compute a list of all unique technologies used across all projects
+    const allTechnologies = useMemo(() =>
+        [...new Set(projects.flatMap(project => project.technologies))], [projects]);
+
+    // State for the currently selected technology filter
+    const [selectedTech, setSelectedTech] = useState('All');
+
+    // Compute a list of all project titles for the autocomplete feature
+    const projectNames = useMemo(() => projects.map(project => project.title), [projects]);
+
+    // useEffect to filter projects based on the selected technology and search term
+    useEffect(() => {
+        const filtered = projects.filter(project =>
+            (selectedTech === 'All' || project.technologies.includes(selectedTech)) &&
+            (project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                project.description.toLowerCase().includes(searchTerm.toLowerCase()))
+        );
+        setFilteredProjects(filtered);
+    }, [searchTerm, projects, selectedTech]);
+
+    // State for the autocomplete suggestions
+    const [autocompleteOptions, setAutocompleteOptions] = useState([]);
+    const handleAutocompleteSelect = (name) => {
+        setAutocompleteOptions([]); // Clear autocomplete options
+        setSearchTerm(name); // Update search term with selected name
+
+    };
+    // useEffect to update autocomplete suggestions based on the search term
+    useEffect(() => {
+        // Check if the search term exactly matches any project name
+        const isExactMatch = projectNames.some(name => name.toLowerCase() === searchTerm.toLowerCase());
+
+        // Only set autocomplete options if there is no exact match
+        if (searchTerm && !isExactMatch) {
+            const filteredOptions = projectNames.filter(name =>
+                name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setAutocompleteOptions(filteredOptions);
+        } else {
+            setAutocompleteOptions([]);
+        }
+    }, [searchTerm, projectNames]);
 
     /**
      * Creates a link button if a URL is provided.
@@ -57,7 +118,7 @@ function ProjectsPage() {
         if (!url) return null;
         return (
             <button
-                className="px-4 py-2 bg-purple-500 text-green-300 rounded hover:bg-purple-600 hover:text-green-400 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                className="px-4 py-2 cyber-button transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                 onClick={() => window.open(url, "_blank")}
                 aria-label={`Open ${text}`}
                 rel="noopener noreferrer"
@@ -72,38 +133,77 @@ function ProjectsPage() {
     return (
         <main className="min-h-screen bg-dark flex flex-col justify-between">
             <section className="text-center py-10 px-4 md:py-20 lg:px-8 xl:px-16 bg-gray-900">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold text-neon-pink">Welcome to My World</h1>
-                <p className="text-lg md:text-xl lg:text-2xl mb-8 text-neon-green">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold cyberpunk-neon">Welcome to My World</h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-8 cyberpunk-neon2">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
                 {/* Additional content can be placed here if needed */}
             </section>
 
-            <div className="flex flex-wrap mx-auto px-4 md:px-8 lg:px-14 my-10">
-                {projects.map((project, index) => (
-                    <div className="project-container flex flex-col lg:flex-row lg:items-center mb-6 lg:mb-12 xl:mb-16 overflow-hidden">
+            <div className="search-bar relative px-4 md:px-8 lg:px-14 my-10 flex flex-col md:flex-row items-center">
+                {/* Search Input */}
+                <div className="flex-grow mr-2 mb-4 md:mb-0">
+                    <input
+                        type="text"
+                        placeholder="Search projects..."
+                        className="search-input w-full p-4 rounded-md"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
 
-                    <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:mr-8">
-                            <img
-                                src={project.thumbnail}
-                                alt={`${project.title} Thumbnail`}
-                                className="w-full h-auto object-cover object-center glitch-img"
-                                loading="lazy"
-                            />
+                    {/* Autocomplete Dropdown */}
+                    {autocompleteOptions.length > 0 && (
+                        <div className="autocomplete-dropdown">
+                            {autocompleteOptions.map((name, index) => (
+                                <div
+                                    key={index}
+                                    className="autocomplete-option"
+                                    onClick={() => handleAutocompleteSelect(name)}>
+                                    {name}
+                                </div>
+                            ))}
                         </div>
-                        <div className="w-full lg:w-1/2">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold text-neon-pink">{project.title}</h2>
-                            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-neon-green">{project.description}</p>
-                            <div className="tech-tags mb-6 flex flex-wrap">
-                                {project.technologies.map(tech => (
-                                    <span key={tech} className="tech-tag text-sm md:text-base mr-2 mb-2 px-2 py-1">{tech}</span>
-                                ))}
+                    )}
+                </div>
+
+                {/* Technology Filter Dropdown */}
+                <div className="flex-grow">
+                    <FilterDropdown
+                        technologies={allTechnologies}
+                        selectedTech={selectedTech}
+                        onSelect={(tech) => setSelectedTech(tech)}
+                    />
+                </div>
+            </div>
+            <div className="flex flex-wrap mx-auto px-4 md:px-8 lg:px-14 my-10">
+                {filteredProjects.length === 0 ? (
+                        <div className="cyberpunk-neon-text text-center my-10">
+                            No projects found. Try different search terms or filters.
+                        </div>
+                    ) :
+                    filteredProjects.map((project, index) => (
+                        <div className="project-container flex flex-col lg:flex-row lg:items-center mb-6 lg:mb-12 xl:mb-16 overflow-hidden">
+                            <div className="w-full lg:w-1/2 mb-4 lg:mb-0 lg:mr-8">
+                                <img
+                                    src={project.thumbnail}
+                                    alt={`${project.title} Thumbnail`}
+                                    className="w-full h-auto object-cover object-center glitch-img"
+                                    loading="lazy"
+                                />
                             </div>
-                            <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
-                                {renderLinkButton(project.githubURL, 'GitHub')}
-                                {project.link ? renderLinkButton(project.link, 'Website') : null}
+                            <div className="w-full lg:w-1/2">
+                                <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold cyberpunk-neon">{project.title}</h2>
+                                <p className="text-sm md:text-base lg:text-lg xl:text-xl cyberpunk-neon-text">{project.description}</p>
+                                <div className="tech-tags mb-6 flex flex-wrap">
+                                    {project.technologies.map(tech => (
+                                        <span key={tech} className="tech-tag text-sm md:text-base mr-2 mb-2 px-2 py-1">{tech}</span>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
+                                    {renderLinkButton(project.githubURL, 'GitHub')}
+                                    {project.link ? renderLinkButton(project.link, 'Website') : null}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
         </main>
     );

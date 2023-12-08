@@ -1,28 +1,27 @@
-/* Custom Cyberpunk Styles */
-html, body {
-    height: 100%;
+body, html {
+    background-color: #0a0a0a; /* Dark background for contrast */
+    color: #fff; /* Bright text for readability */
+    font-family: 'Lato', sans-serif; /* Default font for body text */
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Custom font for modern look in titles */
 }
 
-main {
-    flex: 1; /* This will push the footer to the bottom */
-}
 
 /* Background and Text Colors */
 .bg-dark {
     background-color: #111; /* Dark background for the main area */
 }
-
-.text-neon-pink {
-    color: #ff00ff; /* Neon pink text color */
+.cyberpunk-neon2 {
+    color: #7C7CFF; /* Lighter shade of blue for better readability */
+    text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
 }
-
-.text-neon-green {
-    color: #0f0; /* Neon green text color */
+/*for titles */
+.cyberpunk-neon {
+    color: #39FF14; /* Vibrant green with better readability */
+    text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
 }
 
 /* Project Container */
@@ -47,17 +46,26 @@ main {
 
 
 /* Buttons */
-.button {
-    background-color: #ff00ff; /* Neon pink background */
-    color: white; /* White text */
-    padding: 0.5rem 1rem; /* Padding inside the button */
-    border-radius: 0.25rem; /* Rounded corners */
-    transition: background-color 0.3s; /* Transition for hover effect */
+.cyber-button {
+    background-color: #333; /* Slightly lighter dark background for contrast */
+    color: #39FF14; /* Vibrant green text for better readability */
+    border: 1px solid #32CD32; /* Vibrant green border for coherence */
+    padding: 10px 20px; /* Padding for button size */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allows setting padding and margin */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+    text-shadow: 0 0 5px #32CD32; /* Subtle neon text glow */
 }
 
-.button:hover {
-    background-color: #0f0; /* Neon green background on hover */
+.cyber-button:hover {
+    background-color: #4C1A85; /* Dark purple color on hover for better contrast */
+    color: #E6E6E6; /* Light gray text on hover for readability */
+    border-color: #7D26CD; /* Complementary purple border on hover */
+    text-shadow: 0 0 8px #7D26CD; /* Enhanced glow effect on hover */
 }
+
+
 
 /* Technology Tags */
 .tech-tag {
@@ -73,3 +81,58 @@ main {
 }
 
 
+/* Search Bar Styling */
+.search-bar input[type="text"] {
+    background-color: #222; /* Darker background for input */
+    color: #0f0; /* Neon green text */
+    border: 1px solid #6a0dad; /* Deep purple border */
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Green neon glow */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effect */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #ff00ff; /* Neon pink border on focus */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* Pink neon glow on focus */
+}
+/* Filter Dropdown Styling */
+.search-bar select {
+    background-color: #222; /* Darker background for dropdown */
+    color: #32cd32; /* Lime green text */
+    border: 1px solid #6a0dad; /* Deep purple border */
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Blue neon glow */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.search-bar select:hover {
+    border-color: #0f0; /* Neon green border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Green neon glow on hover */
+}
+/* Search and Filter Container */
+.search-bar {
+    padding: 1rem; /* Padding around search and filter */
+    margin-bottom: 2rem; /* Margin below the container */
+    background-color: rgba(18, 18, 18, 0.9); /* Slightly transparent dark background */
+    border-radius: 0.5rem; /* Rounded corners */
+    backdrop-filter: blur(5px); /* Blur effect for background */
+
+}
+.autocomplete-dropdown {
+    background-color: #222; /* Dark background */
+    color: #0f0; /* Neon green text */
+    position: absolute; /* Positioning relative to the search bar */
+    width: 100%; /* Full width of the search bar */
+    z-index: 10; /* Ensure it's above other elements */
+    max-height: 200px; /* Maximum height */
+    overflow-y: auto; /* Scroll for overflow */
+    border-radius: 0 0 0.5rem 0.5rem; /* Rounded corners for the dropdown */
+}
+
+.autocomplete-option {
+    padding: 0.5rem 1rem; /* Padding for each option */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.autocomplete-option:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
