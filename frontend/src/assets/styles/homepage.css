@@ -1,98 +1,11 @@
-/* Base Styles */
-/* Applies basic font and background styles to the entire page */
-/* Global Styles */
-body, html {
-    background-color: #0a0a0a; /* Dark background for contrast */
-    color: #fff; /* Bright text for readability */
-    font-family: 'Lato', sans-serif; /* Default font for body text */
-}
 
-/* Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif; /* Custom font for modern look in titles */
-}
-
-/* Cyberpunk Neon Glow Effect */
-/* This class adds a neon glow effect to text, typically used for headings or special text */
-.cyberpunk-neon {
-    color: #39FF14; /* Vibrant green with better readability */
-    text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
-}
-
-.cyberpunk-neon2 {
-    color: #7C7CFF; /* Lighter shade of blue for better readability */
-    text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
-}
-.cyberpunk-neon-text {
-    color: #7C7CFF; /* Lighter shade of blue for better readability */
-    text-shadow: 0 0 4px #5555FF, 0 0 6px #3030FF; /* Slightly toned down neon glow for paragraph readability */
-
-    text-align: justify;
-
-}
-
-/* Custom class for the date text */
-
-.custom-flex-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-
-
-
-/* Button Styles */
-/* Styles for buttons with a cyberpunk aesthetic */
-.cyber-button {
-    background-color: #333; /* Slightly lighter dark background for contrast */
-    color: #39FF14; /* Vibrant green text for better readability */
-    border: 1px solid #32CD32; /* Vibrant green border for coherence */
-    padding: 10px 20px; /* Padding for button size */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from links */
-    display: inline-block; /* Allows setting padding and margin */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
-    text-shadow: 0 0 5px #32CD32; /* Subtle neon text glow */
-}
-
-.cyber-button:hover {
-    background-color: #4C1A85; /* Dark purple color on hover for better contrast */
-    color: #E6E6E6; /* Light gray text on hover for readability */
-    border-color: #7D26CD; /* Complementary purple border on hover */
-    text-shadow: 0 0 8px #7D26CD; /* Enhanced glow effect on hover */
-}
-
-
-
-
-.hero-section {
-
-    position: relative; /* Needed for absolute positioning of elements within */
-}
-/* Skills Section */
-.skills-section {
-
-    padding: 2rem 1rem; /* Responsive padding */
-}
-
-
-
-/* Updated skills-section styles */
-.skills-section {
-    padding: 3rem 1.5rem; /* Increased padding for better spacing */
-
-}
-
-/* Updated skills-icons container */
 .skills-icons {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Increased min-size for better visibility */
     gap: 1.5rem; /* Increased gap for clarity */
 }
 
-/* Updated skill-icon-container styles */
+
 .skill-icon-container {
     width: 100px; /* Consistent size */
     height: 100px; /* Maintain square ratio */
@@ -101,10 +14,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     padding: 10px; /* Padding for better framing */
-    border-radius: 8px; /* Rounded corners for a smoother look */
+    border-radius: 8px; /* Rounded corners for footer.css smoother look */
 }
-
-
 
 /* Updated skill-icon styles */
 .skill-icon {
@@ -128,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Typed Text Container */
 /* Container for animated typing effect text */
 .typed-text-container {
-    min-height: 40px; /* Ensure a minimum height */
+    min-height: 40px; /* Ensure footer.css minimum height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,28 +67,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Footer Styles */
-.footer {
-    background-color: #000; /* Black background */
-    padding: 1.5rem 0; /* Top and bottom padding */
-    color: #A0AEC0; /* Light gray text color */
-    font-size: 0.9rem; /* Slightly smaller font size for footer text */
-    border-top: 1px solid #2D3748; /* A border at the top for visual separation */
-}
-
-.footer .max-w-6xl {
-    max-width: 72rem; /* 6xl max width */
-    margin: 0 auto; /* Center the content */
-    padding: 0 1rem; /* Padding on the sides */
-    text-align: center; /* Center the text */
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .footer {
-        font-size: 1rem; /* Larger font size on larger screens */
-    }
-}
 /* Services section styling with purple theme */
 .services-section {
     padding: 3rem 1.5rem;
@@ -243,4 +132,3 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* ... existing cyberpunk-neon2 class styles ... */

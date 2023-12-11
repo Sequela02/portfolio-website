@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 .bg-dark {
     background-color: #111; /* Dark background for the main area */
 }
-.cyberpunk-neon2 {
+.neon-blue-text {
     color: #7C7CFF; /* Lighter shade of blue for better readability */
     text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
 }
 /*for titles */
-.cyberpunk-neon {
+.neon-green-text {
     color: #39FF14; /* Vibrant green with better readability */
     text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
 }
@@ -44,26 +44,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-
-/* Buttons */
-.cyber-button {
-    background-color: #333; /* Slightly lighter dark background for contrast */
-    color: #39FF14; /* Vibrant green text for better readability */
-    border: 1px solid #32CD32; /* Vibrant green border for coherence */
-    padding: 10px 20px; /* Padding for button size */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from links */
-    display: inline-block; /* Allows setting padding and margin */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
-    text-shadow: 0 0 5px #32CD32; /* Subtle neon text glow */
-}
-
-.cyber-button:hover {
-    background-color: #4C1A85; /* Dark purple color on hover for better contrast */
-    color: #E6E6E6; /* Light gray text on hover for readability */
-    border-color: #7D26CD; /* Complementary purple border on hover */
-    text-shadow: 0 0 8px #7D26CD; /* Enhanced glow effect on hover */
-}
 
 
 

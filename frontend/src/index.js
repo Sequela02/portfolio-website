@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';  // Importa tu archivo CSS principal aquí
+import './index.css';
 import App from './App';
 
 const root = document.getElementById('root');

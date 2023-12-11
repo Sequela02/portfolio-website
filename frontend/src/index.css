@@ -4,8 +4,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+/* Global Styles */
+body, html {
+  background-color: #0a0a0a; /* Dark background for contrast */
+  color: #fff; /* Bright text for readability */
+  font-family: 'Lato', sans-serif; /* Default font for body text */
 }
 
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif; /* Custom font for modern look in titles */
+}
+
+
+.neon-green-text {
+  color: #39FF14; /* Vibrant green with better readability */
+  text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
+}
+
+.neon-blue-text {
+  color: #7C7CFF; /* Lighter shade of blue for better readability */
+  text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
+}
+
+
+.cyber-button:hover {
+  background-color: #39FF14; /* Inverted to vibrant green */
+  color: #333; /* Inverted to dark */
+  border-color: #39FF14; /* Matching the vibrant green background */
+  text-shadow: 0 0 5px #136013; /* Adjusted neon text glow */
+  font-weight: 600; /* Semi-bold font weight on hover */
+}
+
+
+
+.cyber-button {
+  background-color: #333; /* Dark background */
+  color: #39FF14; /* Vibrant green text */
+  border: 1px solid #32CD32; /* Vibrant green border */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-shadow: 0 0 5px #32CD32; /* Neon text glow */
+  font-weight: bold; /* Bold font weight */
+}

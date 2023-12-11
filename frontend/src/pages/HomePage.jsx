@@ -17,7 +17,7 @@ import { Helmet } from 'react-helmet';
 import Typed from 'typed.js';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import '../assets/styles/CyberpunkTheme.css';
+import '../assets/styles/homepage.css';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,8 +33,8 @@ import {
 
 
 /**
- * HomePage component serves as the landing page of the application, showcasing a digital rain canvas effect,
- * dynamic typing text, and a grid of skill icons representing various technologies.
+ * HomePage component serves as the landing page of the application, showcasing footer.css digital rain canvas effect,
+ * dynamic typing text, and footer.css grid of skill icons representing various technologies.
  */
 function HomePage() {
     const canvasRef = useRef(null);
@@ -123,18 +123,18 @@ const HeroSection = ({ canvasRef }) => (
             className="absolute top-0 left-0 w-full h-full z-0"
         ></canvas>
         <div className="relative z-10">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 cyberpunk-neon">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 neon-green-text">
                 Canitas
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 cyberpunk-neon2">
+            <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 neon-blue-text">
                 Software Developer
             </h2>
-            <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 cyberpunk-neon">
+            <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 neon-green-text">
                 <h3 className="typed-text">
 
                 </h3>
             </div>
-            <Link to="/portfolio" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cyber-button">
+            <Link to="/portfolio" className=" rounded py-2 px-4 cyber-button">
                 Explore My Projects
             </Link>
         </div>
@@ -152,8 +152,8 @@ const timelineData = [
 
 const TrajectorySection = () => (
     <section className="py-12 md:py-16 lg:py-20 gradient-skills-bg">
-        <div className="container mx-auto px-4">
-            <h2 className="text-center text-green-400 cyberpunk-neon text-4xl" data-aos="fade">
+        <div className=" mx-auto px-4">
+            <h2 className="text-center text-green-400 neon-green-text text-4xl" data-aos="fade">
                 <FontAwesomeIcon icon={faGraduationCap} className="mr-4" /> My Education
             </h2>
             <div className="w-full flex justify-center">
@@ -180,9 +180,7 @@ const TrajectorySection = () => (
             <div className="text-center mt-8">
                 <a
                     href="/cv.pdf"
-                    className="cyber-button inline-block text-green-400 bg-gray-900 hover:bg-gray-700 font-bold py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded shadow-lg hover:shadow-xl transition duration-150 text-sm md:text-base lg:text-lg w-full sm:w-auto"
-                    download
-                >
+                    className="cyber-button py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded shadow-lg  text-sm md:text-base lg:text-lg w-full sm:w-auto">
                     Download CV <FontAwesomeIcon icon={faDownload} />
                 </a>
             </div>
@@ -200,17 +198,17 @@ const services = [
 const ServicesSection = () => (
     <section className="services-section gradient-bg2 py-16 px-6">
         <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-center neon-green-text mb-12">
                  Services
             </h1>
-            <div className="service-description text-center mb-12">
-                <p className="text-xl md:text-2xl font-bold  mb-4 cyberpunk-neon-text">
+            <div className="service-description neon-blue-text text-center mb-12">
+                <p className="text-xl md:text-2xl font-bold  mb-4 ">
                     I offer a range of technology services to help bring your digital projects to life.
                 </p>
-                <p className="text-xl md:text-xl cyberpunk-neon-text mb-4">
+                <p className="text-xl md:text-xl  mb-4">
                     For each project, I focus on understanding your goals and working closely with you. Effective communication is key, so I welcome your ideas and feedback throughout the development process.
                 </p>
-                <p className="text-xl md:text-xl cyberpunk-neon-text">
+                <p className="text-xl md:text-xl ">
                     My priority is creating solutions that achieve your objectives. I guide each project with your preferences and satisfaction in mind. Working as a team, we can leverage innovation to create something remarkable that brings your vision to reality.
                 </p>
             </div>
@@ -218,8 +216,8 @@ const ServicesSection = () => (
             <div className="services-flex flex flex-wrap justify-center">
                 {services.map((service) => (
                     <div key={service.id} className="service-container transition-transform duration-300 ease-in-out rounded-lg text-center p-4 m-2">
-                        <FontAwesomeIcon icon={service.icon} className="service-icon cyberpunk-neon mb-4 text-4xl" />
-                        <h3 className="service-title text-lg md:text-xl font-semibold mb-2 cyberpunk-neon">
+                        <FontAwesomeIcon icon={service.icon} className="service-icon neon-green-text mb-4 text-4xl" />
+                        <h3 className="service-title text-lg md:text-xl font-semibold mb-2 neon-green-text">
                             {service.title}
                         </h3>
                         <p className="service-description">
@@ -240,18 +238,18 @@ const ServicesSection = () => (
 const AboutMe = () => (
     <section className="py-12 gradient-about-me-bg px-4">
         <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center neon-green-text mb-12">
                 <FontAwesomeIcon icon={faUser} /> About Me
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="service-description text-center mb-12">
-                    <p className="text-xl md:text-2xl  mb-4 cyberpunk-neon-text">
+                <div className="service-description neon-blue-text text-center mb-12">
+                    <p className=" text-xl md:text-2xl  mb-4 ">
                         Hello there! I'm Ricardo Armenta, a 21-year-old avid gamer and cinephile with a zest for Chinese cuisine and a passion for boxing. I have a deep love for Java and backend development, and I'm currently immersed in my studies to further hone these skills.
                     </p>
-                    <p className="text-xl md:text-xl cyberpunk-neon-text mb-4">
+                    <p className="text-xl md:text-xl  mb-4">
                         In my leisure time, you'll often find me exploring the latest video games or delving into the world of cinema. My appetite for learning is as insatiable as my love for gaming and film, and I'm always on the lookout for new challenges that push my abilities to the limit.
                     </p>
-                    <p className="text-xl md:text-xl cyberpunk-neon-text">
+                    <p className="text-xl md:text-xl ">
                         If you're interested in a collaborative project or just want to chat about the latest in gaming or film, feel free to reach out!
                    </p>
                 </div>
@@ -283,7 +281,7 @@ const skills = [
 const SkillsSection = () => (
     <section className="skills-section tech-bg py-16 px-6">
         <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center cyberpunk-neon mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center neon-green-text mb-12">
                 <FontAwesomeIcon icon={faCode} className="mr-4" /> Technical Arsenal
             </h2>
             <div className="skills-icons grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
@@ -310,7 +308,7 @@ const SkillsSection = () => (
 const ContactSection = () => (
     <section className="contact-section gradient-contact-bg  py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl font-bold cyberpunk-neon mb-8">
+            <h2 className="text-4xl font-bold neon-green-text mb-8">
                 <FontAwesomeIcon icon={faEnvelope} /> Get in Touch
             </h2>
             <p className="mb-6">

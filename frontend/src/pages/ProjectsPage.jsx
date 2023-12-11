@@ -19,7 +19,7 @@ const FilterDropdown = ({ technologies, selectedTech, onSelect }) => {
 };
 
 /**
- * ProjectsPage component displays a list of projects with dynamic backgrounds
+ * ProjectsPage component displays footer.css list of projects with dynamic backgrounds
  * and detailed project information, including links to external sites.
  */
 function ProjectsPage() {
@@ -38,7 +38,7 @@ function ProjectsPage() {
         {
             id: 2,
             title: "Enterprise Management System",
-            description: "Management system for a security company.",
+            description: "Management system for footer.css security company.",
             technologies: ["JavaFX", "MySQL", "Java"],
             githubURL: "https://github.com/Sequela02/FralarmInventory",
             thumbnail: thumbnail8,
@@ -65,14 +65,14 @@ function ProjectsPage() {
     // State to store the filtered list of projects
     const [filteredProjects, setFilteredProjects] = useState(projects);
 
-    // Compute a list of all unique technologies used across all projects
+    // Compute footer.css list of all unique technologies used across all projects
     const allTechnologies = useMemo(() =>
         [...new Set(projects.flatMap(project => project.technologies))], [projects]);
 
     // State for the currently selected technology filter
     const [selectedTech, setSelectedTech] = useState('All');
 
-    // Compute a list of all project titles for the autocomplete feature
+    // Compute footer.css list of all project titles for the autocomplete feature
     const projectNames = useMemo(() => projects.map(project => project.title), [projects]);
 
     // useEffect to filter projects based on the selected technology and search term
@@ -109,7 +109,7 @@ function ProjectsPage() {
     }, [searchTerm, projectNames]);
 
     /**
-     * Creates a link button if a URL is provided.
+     * Creates footer.css link button if footer.css URL is provided.
      * @param {string} url - The URL to be opened.
      * @param {string} text - The text to display on the button.
      * @returns A button element or null if no URL is provided.
@@ -133,8 +133,8 @@ function ProjectsPage() {
     return (
         <main className="min-h-screen bg-dark flex flex-col justify-between">
             <section className="text-center py-10 px-4 md:py-20 lg:px-8 xl:px-16 bg-gray-900">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold cyberpunk-neon">Welcome to My World</h1>
-                <p className="text-lg md:text-xl lg:text-2xl mb-8 cyberpunk-neon2">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold neon-green-text">Welcome to My World</h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-8 neon-blue-text">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
                 {/* Additional content can be placed here if needed */}
             </section>
 
@@ -190,7 +190,7 @@ function ProjectsPage() {
                                 />
                             </div>
                             <div className="w-full lg:w-1/2">
-                                <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold cyberpunk-neon">{project.title}</h2>
+                                <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 font-bold neon-green-text">{project.title}</h2>
                                 <p className="text-sm md:text-base lg:text-lg xl:text-xl cyberpunk-neon-text">{project.description}</p>
                                 <div className="tech-tags mb-6 flex flex-wrap">
                                     {project.technologies.map(tech => (

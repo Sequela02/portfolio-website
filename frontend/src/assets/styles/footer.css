@@ -1,0 +1,22 @@
+/* Footer Styles */
+.footer {
+    background-color: #000; /* Black background */
+    padding: 1.5rem 0; /* Top and bottom padding */
+    color: #A0AEC0; /* Light gray text color */
+    font-size: 0.9rem; /* Slightly smaller font size for footer text */
+    border-top: 1px solid #2D3748; /* A border at the top for visual separation */
+}
+
+.footer .max-w-6xl {
+    max-width: 72rem; /* 6xl max width */
+    margin: 0 auto; /* Center the content */
+    padding: 0 1rem; /* Padding on the sides */
+    text-align: center; /* Center the text */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .footer {
+        font-size: 1rem; /* Larger font size on larger screens */
+    }
+}

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // AOS Styles
 import CVViewer from '../components/CVViewer';
-import ContactForm from '../components/ContactForm'; // Assuming you have a contact form component
+import ContactForm from '../components/ContactForm'; // Assuming you have footer.css contact form component
 
 
 function HireMePage() {
@@ -13,7 +13,7 @@ function HireMePage() {
     }, []);
 
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-fixed bg-no-repeat bg-cover text-gray-100">
+        <div className="headerContainer mx-auto px-4 sm:px-6 lg:px-8 bg-fixed bg-no-repeat bg-cover text-gray-100">
             {/* Main Content Area */}
             <main className="flex flex-col justify-center items-center min-h-screen pt-10 pb-20">
 
