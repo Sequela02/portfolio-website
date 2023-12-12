@@ -1,15 +1,154 @@
+/* Enhanced container styles for better responsiveness and visual appeal */
+.header {
+    max-width: 1200px; /* Maximum width to maintain layout consistency */
+    margin: 20px auto; /* Vertical margin for top and bottom, auto for left and right */
+    padding: 20px; /* Added padding for internal spacing */
+    border-radius: 30px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 
-/* --- Container Styles --- */
-.headerContainer {
-    max-width: 1200px;
-    max-height: 800px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;
+    overflow: hidden; /* Ensures content respects border radius */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header{
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
 }
 
 
+/* Base styles for Cyberpunk/Blade Runner theme navigation */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem; /* Responsive spacing */
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.75rem 1.5rem; /* Comfortable padding */
+    font-size: 1.25rem; /* Default font size */
+    font-family: 'Orbitron', sans-serif; /* Orbitron font */
+    color: #34FF33; /* Vibrant green for a lively look */
+    transition: color 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+    display: block; /* Ensures link uses full space */
+    border: 2px solid transparent; /* Prevents size change on hover/focus */
+    will-change: transform, opacity; /* Optimize for animations */
+}
+/* Neon glow effect for the underline, optimized for performance */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px; /* Visible underline thickness */
+    background-color: #007AFC; /* Initial blue color for underline */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left center;
+    box-shadow:
+            0 0 10px #007AFC, /* Blue glow */
+            0 0 15px #007AFC; /* Blue glow with a larger spread */
+    opacity: 0; /* Underline hidden initially */
+}
+
+/* Reveal underline for active link */
+.nav-link.active::after {
+    transform: scaleX(1);
+    opacity: 1; /* Show the glowing underline for the active link */
+}
+
+/* Modify hover/focus effect */
+.nav-link:hover::after, .nav-link:focus::after {
+    background-color: #005A9C; /* Darker blue on hover */
+    /* Ensure the hover/focus state does not interfere with the active state */
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* Slightly darker blue for hover state */
+.nav-link:hover, .nav-link:focus {
+    color: #005A9C; /* Darker blue on hover */
+}
+
+.nav-link.active {
+    color: #007AFC; /* Bright blue for active text */
+    text-shadow: none; /* No text shadow to keep focus on the text and underline */
+}
+
+/* Responsive adjustments for different devices */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 1rem; /* Smaller font size for tablet and mobile */
+    }
+
+    .nav-link::after {
+        height: 2px; /* Thinner underline for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        padding: 0.5rem 1rem; /* Smaller padding for mobile devices */
+        font-size: 0.875rem; /* Even smaller font size for mobile */
+    }
+
+    .nav-link::after {
+        height: 2px; /* Maintain thinner underline for mobile */
+    }
+}
+.social-icon {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.icon {
+    font-size: 2rem; /* Adjust the size of the icons */
+    color: #39FF14; /* Darker shade of green */
+    filter: drop-shadow(0 0 4px #2F8F2C) drop-shadow(0 0 8px #2F8F2C); /* Subtle neon glow */
+    transition: filter 0.3s ease, color 0.3s ease;
+}
 
 
+@keyframes glitch-animation {
+    0%, 100% {
+        color: #39FF14; /* Neon green */
+        filter: drop-shadow(0 0 4px #39FF14) drop-shadow(0 0 8px #39FF14);
+        transform: translate(0, 0) skew(0deg);
+    }
+    10%, 30% {
+        color: #FF00FF; /* Neon pink */
+        filter: drop-shadow(0 0 4px #FF00FF) drop-shadow(0 0 8px #FF00FF);
+        transform: translate(-1px, 1px) skew(-1deg);
+    }
+    20%, 40% {
+        color: #007AFC; /* Neon blue */
+        filter: drop-shadow(0 0 4px #007AFC) drop-shadow(0 0 8px #007AFC);
+        transform: translate(1px, -1px) skew(1deg);
+    }
+    50%, 60% {
+        color: #FF00FF; /* Neon pink */
+        filter: drop-shadow(0 0 4px #FF00FF) drop-shadow(0 0 8px #FF00FF);
+        transform: skew(-3deg);
+    }
+    70%, 80% {
+        color: #007AFC; /* Neon blue */
+        filter: drop-shadow(0 0 4px #007AFC) drop-shadow(0 0 8px #007AFC);
+        transform: translate(-2px, 2px) rotate(-2deg);
+    }
+    90% {
+        color: #39FF14; /* Neon green */
+        filter: drop-shadow(0 0 4px #39FF14) drop-shadow(0 0 8px #39FF14);
+        transform: translate(2px, -2px) rotate(2deg);
+    }
+}
 
+
+.glitch:hover .icon, .glitch:focus .icon {
+    animation: glitch-animation 2s linear infinite;
+}
