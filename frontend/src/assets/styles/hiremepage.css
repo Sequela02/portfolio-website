@@ -1,0 +1,108 @@
+/* hireme.css - Blade Runner/Cyberpunk/Tron theme */
+.hireMePage {
+    background-color: #0a0a0a; /* Dark background for the cyberpunk theme */
+
+    color: #f0f0f0; /* Light text for high contrast */
+}
+#gridCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    color: #ff0090; /* Neon pink for the main title */
+    text-shadow: 0 0 10px #ff0090; /* Glowing effect */
+}
+
+.description {
+    color: #0df; /* Bright cyan for descriptive text */
+    text-shadow: 0 0 8px #0df; /* Glowing effect */
+}
+
+.project-section, .sponsor-section {
+    border: 1px solid #ff0090; /* Neon pink border for sections */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px; /* Slight rounding of corners */
+    background: rgba(10, 10, 10, 0.8); /* Slightly transparent black */
+}
+
+.project-list li {
+    color: #0df; /* Bright cyan for list items */
+}
+
+.project-list ul {
+    list-style-type: square; /* Square list style for nested items */
+}
+
+.contact-form {
+    /* Placeholder styles for the contact form */
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem; /* Smaller font size for the title on small screens */
+    }
+
+    .description, .project-section p, .sponsor-section p {
+        font-size: 1rem; /* Adjusted font size for content text */
+    }
+
+    .project-section, .sponsor-section {
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+.contact-section {
+    background-color: #0a0a0a;
+    color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.contact-detail {
+    border: 1px solid #00ffea;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 45%; /* adjust for grid layout */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-detail:hover {
+    transform: scale(1.05); /* subtle zoom effect on hover */
+}
+
+.contact-title {
+    text-shadow: 0 0 10px #00ffea;
+    width: 100%;
+    text-align: center;
+}
+
+.fa {
+    color: #00ffea;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.fa:hover {
+    transform: scale(1.2); /* icon animation on hover */
+    color: #ff00ff;
+}
+
+@media (max-width: 600px) {
+    .contact-detail {
+        flex-basis: 100%;
+    }
+}
