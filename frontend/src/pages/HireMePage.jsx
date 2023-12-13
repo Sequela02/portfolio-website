@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../assets/styles/hiremepage.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faClock,
