@@ -5,7 +5,16 @@
     gap: 1.5rem; /* Increased gap for clarity */
 }
 
+.rounded-full {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Adjust the color and intensity as needed */
+}
 
+/* Add a hover effect for more interactivity */
+.rounded-full:hover {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.9); /* Adjust the color and intensity as needed */
+}
 .skill-icon-container {
     width: 100px; /* Consistent size */
     height: 100px; /* Maintain square ratio */

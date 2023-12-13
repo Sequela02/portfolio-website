@@ -255,8 +255,11 @@ const AboutMe = () => (
                 </div>
 
                 <div className="flex justify-center items-center w-full md:w-full lg:w-1/3 xl:w-1/4 mx-auto mt-6">
-                    <img src={profilePic} alt="Ricardo Armenta" className="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+                    <div className="rounded-full overflow-hidden w-36 h-36 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src={profilePic} alt="Ricardo Armenta" className="w-full h-full object-cover rounded-full" />
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>

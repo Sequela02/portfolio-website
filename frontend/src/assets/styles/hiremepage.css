@@ -1,108 +1,200 @@
-/* hireme.css - Blade Runner/Cyberpunk/Tron theme */
-.hireMePage {
-    background-color: #0a0a0a; /* Dark background for the cyberpunk theme */
-
-    color: #f0f0f0; /* Light text for high contrast */
+/* Hero Container */
+.hero-container {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    position: relative;
+    overflow: hidden;
 }
-#gridCanvas {
+
+.hero-container::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.1) 0,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px,
+            transparent 50%
+    );
+    background-size: 20px 20px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    color: #00f6ff; /* Neon blue */
+    text-shadow: 0 0 10px rgba(0, 246, 255, 0.7);
+}
+
+.hero-description,
+.hero-cta-description {
+    color: #f8f8f2; /* Soft white */
+    text-shadow: 0 0 8px rgba(248, 248, 242, 0.7);
+}
+/* Project Container */
+.project-container2 {
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-container2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.05) 0,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 50%
+    );
+    background-size: 20px 20px;
+    opacity: 0.5;
     z-index: 0;
 }
 
-main {
-    position: relative;
-    z-index: 1;
+.project-content {
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-.title {
-    color: #ff0090; /* Neon pink for the main title */
-    text-shadow: 0 0 10px #ff0090; /* Glowing effect */
+.project-title {
+    color: #f0f0f0; /* Light grey title text */
+    margin-bottom: 20px;
+    /* ... other styles ... */
 }
 
-.description {
-    color: #0df; /* Bright cyan for descriptive text */
-    text-shadow: 0 0 8px #0df; /* Glowing effect */
+.guideline-section,
+.features-section,
+.deadline-section,
+.payment-info-section {
+    background: rgba(255, 255, 255, 0.1); /* Very light background for sections */
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
 }
 
-.project-section, .sponsor-section {
-    border: 1px solid #ff0090; /* Neon pink border for sections */
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px; /* Slight rounding of corners */
-    background: rgba(10, 10, 10, 0.8); /* Slightly transparent black */
+.icon-placeholder {
+    color: #4B6A88; /* Muted blue for the icons */
+    /* ... other styles ... */
 }
 
-.project-list li {
-    color: #0df; /* Bright cyan for list items */
+.guideline-section,
+.features-section,
+.deadline-section,
+.payment-info-section {
+    margin-bottom: 20px;
 }
 
-.project-list ul {
-    list-style-type: square; /* Square list style for nested items */
+.icon-placeholder {
+    color: #00f6ff; /* Neon blue for icons */
+    text-shadow: 0 0 10px rgba(0, 246, 255, 0.7);
 }
 
-.contact-form {
-    /* Placeholder styles for the contact form */
+.guideline-text,
+.feature-text,
+.deadline-text,
+.payment-info-text {
+    color: #f8f8f2; /* Soft white for text */
+    text-shadow: 0 0 8px rgba(248, 248, 242, 0.7);
 }
 
-/* Responsive design adjustments for smaller screens */
-@media (max-width: 768px) {
-    .title {
-        font-size: 3rem; /* Smaller font size for the title on small screens */
-    }
-
-    .description, .project-section p, .sponsor-section p {
-        font-size: 1rem; /* Adjusted font size for content text */
-    }
-
-    .project-section, .sponsor-section {
-        padding: 10px;
-        margin-top: 10px;
-    }
+.list-disc {
+    color: #f8f8f2; /* Soft white for list items */
 }
+/* Contact Section */
 .contact-section {
-    background-color: #0a0a0a;
-    color: #fff;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    background: #0f0f0f; /* Dark base color */
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-detail {
-    border: 1px solid #00ffea;
-    padding: 20px;
-    margin: 10px;
-    flex-basis: 45%; /* adjust for grid layout */
-    text-align: center;
-    transition: transform 0.3s ease;
-}
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.05) 0,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 50%
+    );
+    background-size: 20px 20px;
+    z-index: 0;
 
-.contact-detail:hover {
-    transform: scale(1.05); /* subtle zoom effect on hover */
 }
 
 .contact-title {
-    text-shadow: 0 0 10px #00ffea;
-    width: 100%;
-    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #1E90FF; /* Dodge Blue, vibrant yet professional */
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Complementary shadow color */
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-.fa {
-    color: #00ffea;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+.contact-detail {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fa:hover {
-    transform: scale(1.2); /* icon animation on hover */
-    color: #ff00ff;
+.contact-detail label {
+    margin-right: 5px;
+    font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    .contact-detail {
-        flex-basis: 100%;
-    }
+/* ... Other Contact Styles ... */
+/* Sponsor Container */
+.sponsor-container {
+    background-color: #121212; /* Very dark gray for base color */
+    position: relative;
+    overflow: hidden;
 }
+
+.sponsor-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    background-image: linear-gradient(45deg, transparent 25%, #343434 25%, #343434 50%, transparent 50%, transparent 75%, #343434 75%, #343434),
+    linear-gradient(45deg, #1a1a1a, #1a1a1a);
+    background-size: 40px 40px;
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.sponsor-content {
+    position: relative;
+    z-index: 1;
+    /* Add styles for your content here */
+}
+
+.sponsor-description {
+    color: #f8f8f2; /* Soft white */
+    margin-bottom: 20px;
+}
+
+/* ... Other Sponsor Styles ... */
