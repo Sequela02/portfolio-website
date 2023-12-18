@@ -28,7 +28,7 @@ function ProjectsPage() {
             id: 1,
             title: "My Web Portfolio",
             description: "Portfolio website showcasing my work.",
-            technologies: ["React", "Java", "Spring Boot", "Heroku"],
+            technologies: ["React", "Java", "Spring Boot", "Netlify"],
             githubURL: "https://github.com/Sequela02/portfolio-website",
             thumbnail: thumbnail2,
 
@@ -38,8 +38,8 @@ function ProjectsPage() {
         {
             id: 2,
             title: "Enterprise Management System",
-            description: "Management system for footer.css security company.",
-            technologies: ["JavaFX", "MySQL", "Java"],
+            description: "Management system for a security company.",
+            technologies: ["React", "MySQL", "Java"],
             githubURL: "https://github.com/Sequela02/FralarmInventory",
             thumbnail: thumbnail8,
 
