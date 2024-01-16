@@ -124,10 +124,10 @@ const HeroSection = ({ canvasRef }) => (
         ></canvas>
         <div className="relative z-10">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 neon-green-text">
-                Canitas
+                Ricardo Armenta
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 neon-blue-text">
-                Software Developer
+                Software/Web Developer
             </h2>
             <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 neon-green-text">
                 <h3 className="typed-text">
