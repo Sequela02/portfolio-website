@@ -26,7 +26,7 @@ import {
     faGraduationCap,
     faCode,
     faEnvelope,
-    faHandshake,
+
     faUser,
     faLaptopCode, faMobileAlt, faCogs
 } from '@fortawesome/free-solid-svg-icons';
