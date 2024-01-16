@@ -318,7 +318,7 @@ const ContactSection = () => (
                 If you are interested in professional collaboration or have any inquiries, please feel free to reach out. I am available for discussions and potential opportunities.
             </p>
             <Link to="/hire-me" className="rounded py-2 px-4 cyber-button">
-                <FontAwesomeIcon icon={faHandshake} /> Contact Me
+                Contact Me
             </Link>
         </div>
     </section>
