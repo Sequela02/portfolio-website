@@ -127,7 +127,7 @@ const HeroSection = ({ canvasRef }) => (
                 Ricardo Armenta
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 neon-blue-text">
-                Software/Web Developer
+                Software Developer
             </h2>
             <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 neon-green-text">
                 <h3 className="typed-text">

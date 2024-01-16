@@ -27,17 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
 }
 
-
-.cyber-button:hover {
-  background-color: #39FF14; /* Inverted to vibrant green */
-  color: #333; /* Inverted to dark */
-  border-color: #39FF14; /* Matching the vibrant green background */
-  text-shadow: 0 0 5px #136013; /* Adjusted neon text glow */
-  font-weight: 600; /* Semi-bold font weight on hover */
-}
-
-
-
 .cyber-button {
   background-color: #333; /* Dark background */
   color: #39FF14; /* Vibrant green text */
@@ -50,3 +39,14 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 5px #32CD32; /* Neon text glow */
   font-weight: bold; /* Bold font weight */
 }
+
+.cyber-button:hover {
+  background-color: #39FF14; /* Inverted to vibrant green */
+  color: #333; /* Inverted to dark */
+  border-color: #39FF14; /* Matching the vibrant green background */
+  text-shadow: 0 0 5px #136013; /* Adjusted neon text glow */
+  font-weight: 600; /* Semi-bold font weight on hover */
+}
+
+
+
