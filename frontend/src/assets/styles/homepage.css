@@ -76,11 +76,7 @@
 }
 
 
-/* Services section styling with purple theme */
-.services-section {
-    padding: 3rem 1.5rem;
-    background-color: #111; /* Dark background */
-}
+
 
 .services-flex {
     display: flex;
@@ -124,16 +120,20 @@
     }
 }
 .service-description {
-    max-width: 800px; /* Restricting max width for better readability */
-    margin: 0 auto; /* Centering the text block */
-    line-height: 1.5; /* Improving line spacing */
+    color: #ccc; /* Light grey for readable contrast */
+    max-width: 1000px; /* Restricting max width for better readability */
+    /* Centering the text block */
+    line-height: 1.6; /* Slightly more line spacing */
+    text-align: left; /* Left alignment for better readability */
+    /* Added spacing below the service-description */
+    margin: 0 auto 2rem;
 }
 
 .service-description p {
     margin-bottom: 1rem; /* Spacing between paragraphs */
-    text-align: justify; /* Justify alignment for cleaner look */
-    text-justify: inter-word; /* Improved justification */
+    text-align: left; /* Left alignment for better readability */
 }
+
 
 @media (max-width: 768px) {
     .service-description {

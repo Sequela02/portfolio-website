@@ -1,1 +1,15 @@
+# Redirects Configuration
+
+# This configuration ensures that all navigation requests in the SPA are redirected to the `index.html` file.
+# This is essential for a single-page application where the routing is handled client-side by React Router.
+
+# Format:
+# <source>  <destination>  <status_code>
+
+# Redirect all traffic to `index.html`
+# `/*`: Matches all paths
+# `/index.html`: The target file where all requests are redirected
+# `200`: The HTTP status code for a successful response
+# The 200 status code is crucial as it tells the browser that the redirect is part of SPA routing and not an actual redirect.
+
 /*    /index.html   200

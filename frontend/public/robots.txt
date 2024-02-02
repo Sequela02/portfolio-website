@@ -1,3 +1,17 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for https://www.example.com/
+# This file is used to control the behavior of search engine crawlers
+
+# The User-agent directive specifies which crawler this section applies to.
+# '*' applies to all web crawlers
 User-agent: *
+
+# The Disallow directive specifies paths that shouldn't be crawled by the user agents.
+# Since there is no path specified, this allows all crawlers complete access.
 Disallow:
+
+# Additional rules can be added below for specific user agents and directories.
+# For example, to disallow a specific crawler from a specific directory:
+# User-agent: SpecificBot
+# Disallow: /private-directory/
+
+# End of robots.txt

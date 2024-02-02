@@ -18,11 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #7C7CFF; /* Lighter shade of blue for better readability */
     text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
 }
-/*for titles */
-.neon-green-text {
-    color: #39FF14; /* Vibrant green with better readability */
-    text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
-}
+
 
 /* Project Container */
 .project-container {

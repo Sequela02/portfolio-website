@@ -1,52 +1,50 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+/* Tailwind CSS Base Styles */
+@import "tailwindcss/base"; /* Importing base styles for initial setup */
+@import "tailwindcss/components"; /* Importing component styles for pre-built UI elements */
+@import "tailwindcss/utilities"; /* Importing utility classes for layout and design customization */
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap'); /* Importing 'Orbitron' font from Google Fonts, used for headings to provide a distinctive, futuristic look */
 
-/* Global Styles */
+/* Base Page Styles */
 body, html {
-  background-color: #0a0a0a; /* Dark background for contrast */
-  color: #fff; /* Bright text for readability */
-  font-family: 'Lato', sans-serif; /* Default font for body text */
+  background-color: #0a0a0a; /* Dark background color for overall page contrast and eye comfort */
+  color: #fff; /* White text for high readability against the dark background */
+  font-family: 'Lato', sans-serif; /* Default font 'Lato' for body text, chosen for its readability and clean appearance */
 }
 
-/* Heading Styles */
+/* Heading Font Styling */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif; /* Custom font for modern look in titles */
+  font-family: 'Orbitron', sans-serif; /* Applying 'Orbitron' font to headings, enhancing the tech-oriented theme of the site */
 }
 
-
+/* Neon Text Styles for Visual Impact */
 .neon-green-text {
-  color: #39FF14; /* Vibrant green with better readability */
-  text-shadow: 0 0 8px #32CD32, 0 0 12px #00FF00; /* Enhanced neon glow for clarity */
+  color: #32CD32; /* Soft green color for neon effect, chosen for its vibrant yet eye-friendly appearance */
+  text-shadow: 0 0 4px #32CD32, 0 0 8px #32CD32; /* Green glow effect around text, creating a neon light appearance */
 }
-
 .neon-blue-text {
-  color: #7C7CFF; /* Lighter shade of blue for better readability */
-  text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Adjusted neon glow for clarity */
+  color: #7C7CFF; /* Soft blue color for neon effect, providing a cool tone complementary to the green */
+  text-shadow: 0 0 8px #5555FF, 0 0 12px #3030FF; /* Blue glow effect for a glowing neon aesthetic */
 }
 
-
-.cyber-button:hover {
-  background-color: #39FF14; /* Inverted to vibrant green */
-  color: #333; /* Inverted to dark */
-  border-color: #39FF14; /* Matching the vibrant green background */
-  text-shadow: 0 0 5px #136013; /* Adjusted neon text glow */
-  font-weight: 600; /* Semi-bold font weight on hover */
-}
-
-
-
+/* Cyber Button Styles */
 .cyber-button {
-  background-color: #333; /* Dark background */
-  color: #39FF14; /* Vibrant green text */
-  border: 1px solid #32CD32; /* Vibrant green border */
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  text-shadow: 0 0 5px #32CD32; /* Neon text glow */
-  font-weight: bold; /* Bold font weight */
+  background-color: #333; /* Dark background color for button, ensuring text and border stand out */
+  color: #39FF14; /* Neon green text color for high visibility and distinctive style */
+  border: 1px solid #32CD32; /* Neon green border to complement the text color and enhance the neon theme */
+  padding: 10px 20px; /* Padding for comfortable clickability and balanced appearance */
+  border-radius: 5px; /* Rounded corners for a modern, friendly look */
+  text-decoration: none; /* Removes underline from text to maintain button-like appearance */
+  display: inline-block; /* Allows setting dimensions and alignment like block elements while flowing like inline elements */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease-in-out; /* Added transform to the transition */
+  text-shadow: 0 0 5px #32CD32; /* Subtle green text shadow for depth and neon effect */
+  font-weight: bold; /* Bold text for better readability and visual impact */
+}
+.cyber-button:hover {
+  background-color: #39FF14; /* Changes background to bright green on hover for immediate visual feedback */
+  color: #333; /* Changes text color to dark on hover for contrast against the light background */
+  border-color: #39FF14; /* Border color change on hover for a cohesive interactive effect */
+  text-shadow: 0 0 5px #136013; /* Enhanced shadow on hover for a more dynamic, three-dimensional feel */
+  transform: translateY(-2px) scale(1.05); /* Moves the button up slightly and scales it up for a noticeable hover effect */
 }

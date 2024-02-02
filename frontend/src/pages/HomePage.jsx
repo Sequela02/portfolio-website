@@ -13,7 +13,6 @@ import nodeLogo from '../assets/icons/icons8-nodejs.svg';
 import javascriptLogo from '../assets/icons/icons8-javascript.svg';
 import cSharpLogo from '../assets/icons/icons8-c-sharp-logo.svg';
 import profilePic from '../assets/icons/profilepic.jpg';
-import { Helmet } from 'react-helmet';
 import Typed from 'typed.js';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -28,7 +27,7 @@ import {
     faEnvelope,
     faHandshake,
     faUser,
-    faLaptopCode, faMobileAlt, faCogs
+    faLaptopCode, faMobileAlt, faCogs, faRocket
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -95,10 +94,7 @@ function HomePage() {
 
     return (
         <>
-            <Helmet>
-                <title>Canitas - Home</title>
-                <meta name="description" content="Canitas - A passionate developer creating innovative tech solutions." />
-            </Helmet>
+
             <main className="min-h-screen bg-black text-white">
                 <HeroSection canvasRef={canvasRef} />
                 <AboutMe />
@@ -127,14 +123,14 @@ const HeroSection = ({ canvasRef }) => (
                 Canitas
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl mb-6 neon-blue-text">
-                Software Developer
+                Fullstack Developer
             </h2>
             <div className="typed-text-container text-base md:text-lg lg:text-xl mb-8 neon-green-text">
                 <h3 className="typed-text">
 
                 </h3>
             </div>
-            <Link to="/portfolio" className=" rounded py-2 px-4 cyber-button">
+            <Link to="/portfolio" className="cyber-button py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded shadow-lg  text-sm md:text-base lg:text-lg w-full sm:w-auto">
                 Explore My Projects
             </Link>
         </div>
@@ -196,31 +192,31 @@ const services = [
     { id: 3, title: 'Software Development', description: 'Developing robust software solutions for various platforms.', icon: faCogs }
 ];
 const ServicesSection = () => (
-    <section className="services-section gradient-bg2 py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-center neon-green-text mb-12">
-                 Services
+    <section className=" gradient-bg2 py-12 md:py-16 lg:py-20">
+        <div className="max-w-6xl mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-center neon-green-text mb-16">
+                <FontAwesomeIcon icon={faRocket} className="mr-4" /> Services
             </h1>
-            <div className="service-description neon-blue-text text-center mb-12">
-                <p className="text-xl md:text-2xl font-bold  mb-4 ">
+            <div className="service-description neon-blue-text text-left mb-16">
+                <p className="text-xl md:text-2xl font-bold mb-6">
                     I offer a range of technology services to help bring your digital projects to life.
                 </p>
-                <p className="text-xl md:text-xl  mb-4">
+                <p className="text-xl md:text-2xl mb-6">
                     For each project, I focus on understanding your goals and working closely with you. Effective communication is key, so I welcome your ideas and feedback throughout the development process.
                 </p>
-                <p className="text-xl md:text-xl ">
+                <p className="text-xl md:text-2xl">
                     My priority is creating solutions that achieve your objectives. I guide each project with your preferences and satisfaction in mind. Working as a team, we can leverage innovation to create something remarkable that brings your vision to reality.
                 </p>
             </div>
 
-            <div className="services-flex flex flex-wrap justify-center">
+            <div className="services-flex grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((service) => (
-                    <div key={service.id} className="service-container transition-transform duration-300 ease-in-out rounded-lg text-center p-4 m-2">
-                        <FontAwesomeIcon icon={service.icon} className="service-icon neon-green-text mb-4 text-4xl" />
-                        <h3 className="service-title text-lg md:text-xl font-semibold mb-2 neon-green-text">
+                    <div key={service.id} className="service-container transition-transform duration-300 ease-in-out rounded-lg text-center p-6 bg-white bg-opacity-20 hover:scale-105 shadow-lg">
+                        <FontAwesomeIcon icon={service.icon} className="service-icon neon-green-text mb-6 text-4xl" />
+                        <h3 className="service-title text-xl font-semibold mb-4 neon-green-text">
                             {service.title}
                         </h3>
-                        <p className="service-description">
+                        <p className="service-description text-lg">
                             {service.description}
                         </p>
                     </div>
@@ -235,6 +231,7 @@ const ServicesSection = () => (
 
 
 
+
 const AboutMe = () => (
     <section className="py-12 gradient-about-me-bg px-4">
         <div className="max-w-6xl mx-auto">
@@ -243,15 +240,15 @@ const AboutMe = () => (
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-between">
                 <div className="service-description neon-blue-text text-center mb-12">
-                    <p className=" text-xl md:text-2xl  mb-4 ">
-                        Hello there! I'm Ricardo Armenta, a 21-year-old avid gamer and cinephile with a zest for Chinese cuisine and a passion for boxing. I have a deep love for Java and backend development, and I'm currently immersed in my studies to further hone these skills.
+                    <p className="text-xl md:text-2xl mb-4">
+                        Hi! I'm Ricardo, 21 years old, and I love video games and movies. I enjoy Chinese food and boxing too. I'm really into Java, web/software development, and I'm studying a lot to get even better at it.
                     </p>
-                    <p className="text-xl md:text-xl  mb-4">
-                        In my leisure time, you'll often find me exploring the latest video games or delving into the world of cinema. My appetite for learning is as insatiable as my love for gaming and film, and I'm always on the lookout for new challenges that push my abilities to the limit.
+                    <p className="text-xl md:text-2xl mb-4">
+                        When I'm not studying, I'm probably playing games or watching a movie. I'm always eager to learn new things and tackle tough problems that test my skills.
                     </p>
-                    <p className="text-xl md:text-xl ">
-                        If you're interested in a collaborative project or just want to chat about the latest in gaming or film, feel free to reach out!
-                   </p>
+                    <p className="text-xl md:text-2xl">
+                        If you want to team up on a project or just talk about games and movies, I'm here for it—just reach out!
+                    </p>
                 </div>
 
                 <div className="flex justify-center items-center w-full md:w-full lg:w-1/3 xl:w-1/4 mx-auto mt-6">
@@ -259,10 +256,11 @@ const AboutMe = () => (
                         <img src={profilePic} alt="Ricardo Armenta" className="w-full h-full object-cover rounded-full" />
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
+
 );
 
 
@@ -309,7 +307,7 @@ const SkillsSection = () => (
 
 // Contact section for user engagement
 const ContactSection = () => (
-    <section className="contact-section gradient-contact-bg  py-10 px-4">
+    <section className="gradient-contact-bg  py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl font-bold neon-green-text mb-8">
                 <FontAwesomeIcon icon={faEnvelope} /> Get in Touch
@@ -317,7 +315,7 @@ const ContactSection = () => (
             <p className="mb-6">
                 If you are interested in professional collaboration or have any inquiries, please feel free to reach out. I am available for discussions and potential opportunities.
             </p>
-            <Link to="/hire-me" className="cyber-button text-white font-bold py-2 px-4 rounded">
+            <Link to="/hire-me" className="cyber-button  py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded shadow-lg  text-sm md:text-base lg:text-lg w-full sm:w-auto ">
                 <FontAwesomeIcon icon={faHandshake} /> Contact Me
             </Link>
         </div>

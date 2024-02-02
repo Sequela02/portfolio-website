@@ -1,8 +1,29 @@
+/**
+ * ProjectsPage.jsx
+ *
+ * This is the main entry point of the Projects page. It displays a list of projects with dynamic backgrounds
+ * and detailed project information, including links to external sites. It also includes a search bar and a filter dropdown
+ * for users to search and filter projects based on their needs.
+ *
+ * @module ProjectsPage
+ */
+
 import React, {useEffect, useMemo, useState} from 'react';
 import '../assets/styles/projectsPage.css';
 import thumbnail1 from '../assets/images/avenidaSS.png';
 import thumbnail2 from '../assets/images/portfoliopc.png';
 import thumbnail8 from '../assets/images/fralarmss.png';
+
+
+/**
+ * FilterDropdown component is used to filter projects based on the selected technology.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {Array} props.technologies - The list of all unique technologies used across all projects.
+ * @param {string} props.selectedTech - The currently selected technology filter.
+ * @param {Function} props.onSelect - The function to call when a technology is selected.
+ * @returns {ReactElement} The rendered FilterDropdown component.
+ */
 const FilterDropdown = ({ technologies, selectedTech, onSelect }) => {
     return (
         <select
@@ -19,8 +40,11 @@ const FilterDropdown = ({ technologies, selectedTech, onSelect }) => {
 };
 
 /**
- * ProjectsPage component displays footer.css list of projects with dynamic backgrounds
- * and detailed project information, including links to external sites.
+ * ProjectsPage component displays a list of projects with dynamic backgrounds
+ * and detailed project information, including links to external sites. It also includes a search bar and a filter dropdown
+ * for users to search and filter projects based on their needs.
+ *
+ * @returns {ReactElement} The rendered ProjectsPage component.
  */
 function ProjectsPage() {
     const [projects] = useState([
@@ -56,7 +80,7 @@ function ProjectsPage() {
 
 
         }
-        // ... add more projects as needed
+
     ]);
 
     // State to hold the current search term
@@ -118,7 +142,7 @@ function ProjectsPage() {
         if (!url) return null;
         return (
             <button
-                className="px-4 py-2 cyber-button transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                className="px-4 py-2 cyber-button"
                 onClick={() => window.open(url, "_blank")}
                 aria-label={`Open ${text}`}
                 rel="noopener noreferrer"
@@ -131,12 +155,20 @@ function ProjectsPage() {
 
 
     return (
-        <main className="min-h-screen bg-dark flex flex-col justify-between">
-            <section className="text-center py-10 px-4 md:py-20 lg:px-8 xl:px-16 bg-gray-900">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-bold neon-green-text">Welcome to My World</h1>
-                <p className="text-lg md:text-xl lg:text-2xl mb-8 neon-blue-text">Dive into the portfolio that's been crafted with the spirit of adventure and innovation.</p>
-                {/* Additional content can be placed here if needed */}
+        <main className="min-h-screen  flex flex-col justify-between">
+
+
+            <section className="text-center py-10 md:py-20 lg:py-32 relative">
+                <div className="hero-content max-w-2xl mx-auto">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 neon-green-text">
+                        Project Showcase
+                    </h1>
+                    <p className="text-lg sm:text-xl neon-blue-text">
+                        Explore a curated collection of my professional work, highlighting my expertise and dedication to innovation.
+                    </p>
+                </div>
             </section>
+
 
             <div className="search-bar relative px-4 md:px-8 lg:px-14 my-10 flex flex-col md:flex-row items-center">
                 {/* Search Input */}
