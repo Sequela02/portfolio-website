@@ -218,7 +218,7 @@ function ProjectsPage() {
                                     src={project.thumbnail}
                                     alt={`${project.title} Thumbnail`}
                                     className="w-full h-auto object-cover object-center glitch-img"
-                                    loading="lazy"
+
                                 />
                             </div>
                             <div className="w-full lg:w-1/2">

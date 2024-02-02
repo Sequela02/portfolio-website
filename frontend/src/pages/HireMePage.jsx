@@ -86,7 +86,7 @@ function ContactSection() {
             </p>
         </section>
     );
-}
+    }
 
 function SponsorSection() {
     return (
@@ -97,12 +97,12 @@ function SponsorSection() {
                     Your contributions help support my open-source projects and the broader community.
                 </p>
                 {/* Button for sponsorship */}
-                <a href="https://paypal.me/r3xed?country.x=MX&locale.x=es_XC" target="_blank" rel="noopener noreferrer">
-                    <button className="cyber-button flex items-center justify-center px-4 py-2 text-white font-bold rounded transition duration-300">
-                        <FontAwesomeIcon icon={faHandHoldingHeart} className="mr-2" />
-                        Sponsor Now
-                    </button>
-                </a>
+                    <a href="https://paypal.me/r3xed?country.x=MX&locale.x=es_XC" target="_blank" rel="noopener noreferrer">
+                        <button className="cyber-button flex items-center justify-center px-4 py-2 text-white font-bold rounded transition duration-300">
+                            <FontAwesomeIcon icon={faHandHoldingHeart} className="mr-2" />
+                            Sponsor Now
+                        </button>
+                    </a>
 
             </div>
         </section>
